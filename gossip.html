@@ -3,64 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gossip — I Love Toronto</title>
-<meta name="description" content="The drama, the tea, and the stories everyone's whispering about">
+<title>Gossip - I Love Toronto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
-.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
 .nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
 .nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
-.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
-.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
-.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
-.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
-.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
-.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
-.cat-hero__h em{font-style:italic;color:#F7C948}
-.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
-.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
-.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-.feat:hover .feat__bg{transform:scale(1.03)}
-.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
-.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
-.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
-.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
-.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
-.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
-.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
-.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
-.card:hover .card__bg{transform:scale(1.04)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}.tb__btn:hover{color:var(--bk)}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.hero{position:relative;min-height:50vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&w=1600') center/cover;opacity:.35}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95),rgba(8,11,20,.3) 50%,transparent)}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 56px;width:100%}
+.hero__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#9B2C2C;color:#fff;padding:5px 14px;margin-bottom:16px}
+.hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.08;max-width:700px;margin-bottom:14px}
+.hero__p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.6;max-width:500px}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}.sdiv__label{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}.sdiv__line{flex:1;height:.5px;background:var(--rl)}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0}
+.card:hover{background:rgba(0,0,0,.02);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center}
 .card__body{display:flex;flex-direction:column;justify-content:center}
-.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9B2C2C;margin-bottom:6px}
 .card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
 .card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
-.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
-.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
-.sdiv__r{flex:1;height:.5px;background:var(--rl)}
-.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
-.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
-.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
-@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+.card__link{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#9B2C2C;margin-top:8px}
+.feat{position:relative;overflow:hidden;min-height:400px;display:block;color:#fff;margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center}.feat:hover .feat__bg{transform:scale(1.03);transition:transform .5s}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2) 50%,rgba(0,0,0,.05))}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:44px 40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:14px;background:#9B2C2C;color:#fff}
+.feat__h{font-family:var(--sf);font-size:34px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:15px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:40vh}.hero__inner{padding:0 24px 36px}.hero__h{font-size:28px}.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:26px}.feat__body{padding:28px 24px}.mx{padding:0 16px}}
 @media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
-<section class="cat-hero" style="background:linear-gradient(135deg,#742A2A 0%,#E53E3E 100%)">
-<div class="cat-hero__grid"></div>
-<div class="cat-hero__inner">
-<div class="cat-hero__tag">👀 Gossip</div>
-<h1 class="cat-hero__h">Gossip</h1>
-<p class="cat-hero__p">The drama, the tea, and the stories everyone's whispering about</p>
+<nav class="nav">
+<div class="nav__top">
+<a class="nav__logo" href="index.html">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF">AI Concierge</a>
+<a class="tb__btn" href="eat.html">Eat & Drink</a>
+<a class="tb__btn" href="hoods.html">Neighbourhoods</a>
+<a class="tb__btn" href="events.html">What's On</a>
+<a class="tb__btn" href="gems.html">Local Gems</a>
+<a class="tb__btn" href="outdoors.html">Outdoors</a>
+<a class="tb__btn" href="nightlife.html">Nightlife</a>
+<a class="tb__btn" href="parties.html">Parties</a>
+<a class="tb__btn" href="yachts.html">Yacht Rental</a>
+<a class="tb__btn" style="color:#9B2C2C;font-weight:700;border-bottom:2.5px solid #9B2C2C" href="gossip.html">Gossip</a>
+
+</div></div>
+</nav>
+<section class="hero">
+<div class="hero__bg"></div>
+<div class="hero__ov"></div>
+<div class="hero__inner">
+<span class="hero__cat">Gossip</span>
+<h1 class="hero__h">The Stuff Nobody Else Will Tell You About Toronto</h1>
+<p class="hero__p">Scandals, drama, crime, controversy, viral moments, and the stories that make you text your group chat at 2 AM. This is the unfiltered city.</p>
 </div>
 </section>
-<a href="https://www.blogto.com/real-estate-toronto/2026/05/sneaky-dees-toronto-redevelopment/" target="_blank" class="feat"><div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&w=1200');background-color:#333"></div><div class="feat__ov"></div><div class="feat__body"><span class="feat__cat" style="background:#9B2C2C">Developing · May 2026</span><h2 class="feat__h">Sneaky Dee's Is Under Threat Again — 16-Storey Condo Proposal Is Back</h2><p class="feat__p">Ironwood Bay filed a revised application for a 203-unit tower at Bathurst & College. Community consultation May 28 at City Hall. Sneaky Dee's says they have no plans to leave — even if they have to find a new home.</p></div></a>
-<div class="mx" style="padding-bottom:60px">
-<a href="https://retail-insider.com/retail-insider/2026/05/torontos-basil-box-to-shut-down-all-locations-by-may-14/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">Industry Tea ☕</span><h3 class="card__h">Basil Box Didn't Go Bankrupt — So Why Did It Die?</h3><p class="card__p">No creditor protection. No buyer search. The founder just… walked away after 11 years and 17 locations. 'Deeply personal reasons.' Toronto's fast-casual scene is reeling.</p></div></a><a href="https://www.blogto.com/eat_drink/2026/05/bonitos-toronto-closed-bambu/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2291367/pexels-photo-2291367.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">Plot Twist</span><h3 class="card__h">Bonito's Was the Hottest Opening of 2025 — Now It's a Different Bar</h3><p class="card__p">Korean-Ecuadorean retro spot at 180 Ossington hit every 'must-try' list, then quietly shuttered. Same team pivoted to Bambu — cocktails, no more bibimbap-empanada mashups.</p></div></a><a href="https://exclaim.ca/music/article/a-developer-is-once-again-trying-to-turn-sneaky-dee-s-into-a-condo" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">Developing</span><h3 class="card__h">Good Luck Selling 203 Condos in This Market, Ironwood Bay</h3><p class="card__p">The Sneaky Dee's developer wants to add 3 floors and 34 units to the original 2020 plan. The proposal includes a 'music venue' at ground level. Exclaim! is sceptical. So are we.</p></div></a><a href="https://www.blogto.com/eat_drink/2026/04/yukashi-toronto-closing/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">Whisper</span><h3 class="card__h">Yukashi's Chef Says 'Something New Is Coming' — But What?</h3><p class="card__p">Daisuke Izutsu closed his Michelin-starred 10-seater on May 2. The cryptic sign-off has the Toronto food world speculating. New omakase? Different cuisine entirely? Nobody knows yet.</p></div></a><a href="https://www.blogto.com/eat_drink/2026/04/tokyo-hot-fried-chicken-toronto-closed/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">RIP</span><h3 class="card__h">The Real Reason Tokyo Hot Fried Chicken Called It Quits</h3><p class="card__p">Jess and Jordan were honest: 'The toll it takes on your mind, body, and soul.' After seven years and a cult following on College, the industry chewed them up. Pop-ups coming eventually.</p></div></a><a href="https://www.blogto.com/city/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#9B2C2C">Hot Take</span><h3 class="card__h">Toronto's Real Estate Agents Are Throwing Parties Now?</h3><p class="card__p">Open houses with DJs, champagne walls, and influencer guest lists. The line between selling homes and hosting events is officially gone.</p></div></a>
+<div class="mx" style="padding:24px 32px 80px">
+<a href="cops-spain.html" class="feat" target="_blank">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/532001/pexels-photo-532001.jpeg?auto=compress&w=1200')"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat">Breaking</span><h2 class="feat__h">3 Toronto Cops Arrested in Barcelona for Allegedly Assaulting a Sex Worker in a Taxi</h2><p class="feat__p">Evan Glennie, Rich Rand, and Caglar Yigit. Two charged with sexual assault. One charged with attacking a Spanish officer. All suspended with pay. Full story.</p></div>
+</a><a href="https://globalnews.ca/video/11809444/toronto-man-who-killed-2-strangers-2-days-apart-found-guilty-of-first-degree-murder" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Unhinged</span><h3 class="card__h">Drake Dropped 3,500 Ice Blocks in a Parking Lot and Toronto Lost Its Mind</h3><p class="card__p">Fans brought blowtorches and sledgehammers. Someone started fires. The fire department melted the whole thing. Mayor Chow: 'I'm excited too.' The most unhinged album rollout in history.</p><span class="card__link">Read More</span></div>
+</a><a href="gossip.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Developing</span><h3 class="card__h">Sneaky Dee's Condo: 16 Storeys, 203 Units, and a Neighbourhood That Won't Go Quietly</h3><p class="card__p">Ironwood Bay filed at Bathurst & College. Sneaky Dee's says 'not going anywhere.' Community consultation May 28. Developer promises a 'ground-floor music venue.' History says the venue always loses.</p><span class="card__link">Read More</span></div>
+</a><a href="dating-toronto.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Viral</span><h3 class="card__h">Why Dating in Toronto Is Completely Impossible in 2026</h3><p class="card__p">The Finance Bro. The Ossington Creative. The 'I Know My Worth' Queen. Everyone is mid and everyone thinks they're a 10. The most honest article about Toronto dating.</p><span class="card__link">Read More</span></div>
+</a><div class="sdiv"><span class="sdiv__label">Dark Toronto</span><div class="sdiv__line"></div></div><a href="bbq-murder.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1309076/pexels-photo-1309076.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Crime</span><h3 class="card__h">Liberty Village Couple on Trial for Killing Neighbour Over BBQ Smoke</h3><p class="card__p">Filmmaker's body found in garbage compactor. Screams heard at 3 AM. Roommate told not to talk to police. This is the most insane trial in Toronto right now.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.cbc.ca/lite/news/canada/ontario/toronto" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Crime</span><h3 class="card__h">Home Invasions Hit a 10-Year High in Toronto's Richest Neighbourhoods</h3><p class="card__p">Bridle Path, Lawrence Park, Rosedale. Organized crews recruiting teenagers. Masks, hammers, $20K panic rooms. The police response: unmarked cars driving around at night.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.cp24.com/local/toronto/2026/05/20/toronto-island-airport-expansion-will-cost-up-to-5-billion-port-authority-says/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Wild</span><h3 class="card__h">Doug Ford Wants to Expand Billy Bishop and Maybe Take Over the Toronto Islands</h3><p class="card__p">Bill 110 would allow jets downtown. Cost: $4-5 billion. Poilievre says 'Pearson is a disaster.' The province could seize Island land. The NDP is calling it a land grab. Toronto is caught in the middle.</p><span class="card__link">Read More</span></div>
+</a>
 </div>
-<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+<footer class="ft"><div class="ft__inner"><span>2026 I Love Toronto</span><a href="how.html">How This Works</a></div></footer>
 </body>
 </html>

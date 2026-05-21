@@ -3,64 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The restaurants Toronto <em>can't stop</em> talking about — I Love Toronto</title>
-<meta name="description" content="Closings, openings, patio launches, and the spots that matter right now">
+<title>Eat & Drink - I Love Toronto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
-.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
 .nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
 .nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
-.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
-.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
-.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
-.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
-.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
-.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
-.cat-hero__h em{font-style:italic;color:#F7C948}
-.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
-.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
-.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-.feat:hover .feat__bg{transform:scale(1.03)}
-.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
-.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
-.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
-.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
-.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
-.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
-.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
-.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
-.card:hover .card__bg{transform:scale(1.04)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}.tb__btn:hover{color:var(--bk)}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.hero{position:relative;min-height:50vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&w=1600') center/cover;opacity:.35}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95),rgba(8,11,20,.3) 50%,transparent)}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 56px;width:100%}
+.hero__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#C4442A;color:#fff;padding:5px 14px;margin-bottom:16px}
+.hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.08;max-width:700px;margin-bottom:14px}
+.hero__p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.6;max-width:500px}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}.sdiv__label{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}.sdiv__line{flex:1;height:.5px;background:var(--rl)}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0}
+.card:hover{background:rgba(0,0,0,.02);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center}
 .card__body{display:flex;flex-direction:column;justify-content:center}
-.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C4442A;margin-bottom:6px}
 .card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
 .card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
-.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
-.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
-.sdiv__r{flex:1;height:.5px;background:var(--rl)}
-.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
-.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
-.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
-@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+.card__link{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C4442A;margin-top:8px}
+.feat{position:relative;overflow:hidden;min-height:400px;display:block;color:#fff;margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center}.feat:hover .feat__bg{transform:scale(1.03);transition:transform .5s}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2) 50%,rgba(0,0,0,.05))}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:44px 40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:14px;background:#C4442A;color:#fff}
+.feat__h{font-family:var(--sf);font-size:34px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:15px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:40vh}.hero__inner{padding:0 24px 36px}.hero__h{font-size:28px}.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:26px}.feat__body{padding:28px 24px}.mx{padding:0 16px}}
 @media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
-<section class="cat-hero" style="background:linear-gradient(135deg,#8B4513 0%,#D2691E 100%)">
-<div class="cat-hero__grid"></div>
-<div class="cat-hero__inner">
-<div class="cat-hero__tag">🍷 Eat & Drink</div>
-<h1 class="cat-hero__h">The restaurants Toronto <em>can't stop</em> talking about</h1>
-<p class="cat-hero__p">Closings, openings, patio launches, and the spots that matter right now</p>
+<nav class="nav">
+<div class="nav__top">
+<a class="nav__logo" href="index.html">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF">AI Concierge</a>
+<a class="tb__btn" style="color:#C4442A;font-weight:700;border-bottom:2.5px solid #C4442A" href="eat.html">Eat & Drink</a>
+<a class="tb__btn" href="hoods.html">Neighbourhoods</a>
+<a class="tb__btn" href="events.html">What's On</a>
+<a class="tb__btn" href="gems.html">Local Gems</a>
+<a class="tb__btn" href="outdoors.html">Outdoors</a>
+<a class="tb__btn" href="nightlife.html">Nightlife</a>
+<a class="tb__btn" href="parties.html">Parties</a>
+<a class="tb__btn" href="yachts.html">Yacht Rental</a>
+<a class="tb__btn" href="gossip.html">Gossip</a>
+
+</div></div>
+</nav>
+<section class="hero">
+<div class="hero__bg"></div>
+<div class="hero__ov"></div>
+<div class="hero__inner">
+<span class="hero__cat">Eat & Drink</span>
+<h1 class="hero__h">What Toronto Is Eating, Drinking, Opening, and Closing Right Now</h1>
+<p class="hero__p">New spots, surprise closings, happy hours that don't suck, and the restaurants everyone is fighting to get into. No listicles. Just the truth.</p>
 </div>
 </section>
-<a href="https://www.blogto.com/eat_drink/2026/05/basil-box-toronto-closing/" target="_blank" class="feat"><div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&w=1200');background-color:#333"></div><div class="feat__ov"></div><div class="feat__body"><span class="feat__cat" style="background:#C4442A">Closing · May 2026</span><h2 class="feat__h">Basil Box Is Dead. All Locations, Gone by May 14.</h2><p class="feat__p">The GTA-born build-your-own bowl chain that peaked at 17 locations shut every restaurant this month. Founder Peter Chiu cited 'deeply personal reasons.' No sale. No restructuring. Just gone after 11 years.</p></div></a>
-<div class="mx" style="padding-bottom:60px">
-<div class="sdiv"><span class="sdiv__l">Closings & Goodbyes</span><div class="sdiv__r"></div></div><a href="https://www.blogto.com/eat_drink/2026/04/yukashi-toronto-closing/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#C4442A">RIP · Michelin</span><h3 class="card__h">Yukashi Closed for Good — Toronto Lost a Michelin Star</h3><p class="card__p">Chef Daisuke Izutsu's 10-seat Mount Pleasant omakase earned one of Canada's first Michelin stars in 2022. Final dinner was May 2. 'Something new is coming,' they say.</p></div></a><a href="https://www.blogto.com/eat_drink/2026/04/tokyo-hot-fried-chicken-toronto-closed/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#C4442A">RIP · College St</span><h3 class="card__h">Tokyo Hot Fried Chicken Closed After 7 Years on College</h3><p class="card__p">The Nashville-meets-karaage shop at 656 College was a neighbourhood pillar. Lease ended, owners burned out. They'll return as pop-ups — 'back to the streets where it all began.'</p></div></a><a href="https://www.blogto.com/eat_drink/2026/05/bonitos-toronto-closed-bambu/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2291367/pexels-photo-2291367.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#C4442A">Plot Twist · Ossington</span><h3 class="card__h">Bonito's Lasted Less Than a Year — Already Replaced by Bambu</h3><p class="card__p">The Korean-Ecuadorean retro hit at 180 Ossington closed after a liquor license mishap. Bar Bowie's team pivoted the space to 'Bambu' — cocktail-forward late-night concept. Opened May 13.</p></div></a><a href="https://www.insauga.com/7-restaurants-that-closed-in-toronto-in-april-2026/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#C4442A">RIP · Kensington</span><h3 class="card__h">Uncle Pete's Bread Co. Lost Its Lease on Baldwin Street</h3><p class="card__p">The tiny focaccia sandwich counter — OG mortadella with whipped lemon ricotta — couldn't find a new home in time. Last day was April 25.</p></div></a><div class="sdiv"><span class="sdiv__l">Openings & New Energy</span><div class="sdiv__r"></div></div><a href="https://www.blogto.com/eat_drink/2026/05/bonitos-toronto-closed-bambu/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">New · Ossington</span><h3 class="card__h">Bambu Just Opened at 180 Ossington — Cocktails, Small Bites, Late Nights</h3><p class="card__p">Bar Bowie's little sister concept. 'A new bar, shaped by places, flavours, music, and nights we kept thinking about long after they've ended.'</p></div></a><a href="https://www.aloetterestaurant.com/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">New Menu</span><h3 class="card__h">Aloette Just Dropped a Summer Tasting Menu and It's Unhinged</h3><p class="card__p">Patrick Kriss goes full Mediterranean chaos — anchovies, peaches, and a dessert that takes 45 minutes.</p></div></a><div class="sdiv"><span class="sdiv__l">Patio Season Is Here</span><div class="sdiv__r"></div></div><a href="https://www.cp24.com/local/toronto/2026/05/15/cafeto-returns-this-weekend-kicking-off-torontos-patio-season/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1322184/pexels-photo-1322184.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#2C5282">CaféTO · Victoria Day</span><h3 class="card__h">CaféTO Launched This Weekend — 290+ Restaurants Added Curb Lane Patios</h3><p class="card__p">The city's patio expansion program is back for 2026. Over 1,600 total outdoor dining spaces across Toronto. Ossington, Dundas West, Queen West, and the Danforth are loaded.</p></div></a><a href="https://www.paradisegrapevine.com/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#2C5282">Patio Pick</span><h3 class="card__h">Paradise Grapevine: Tinned Fish + Natural Wine on Dundas West</h3><p class="card__p">$18 tins with natural wine pairings. There's never a wait before 6pm. One of the best low-key summer hangs in the city.</p></div></a><a href="https://www.blogto.com/eat_drink/toronto-kensington-market/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:var(--mg)">Deep Dive</span><h3 class="card__h">Kensington Market Food Crawl: The Only Guide You Need</h3><p class="card__p">Seven Lives tacos, Jumbo Empanadas, Wanda's pie, and Moonbean coffee. Mapped in order.</p></div></a>
+<div class="mx" style="padding:24px 32px 80px">
+<div class="sdiv"><span class="sdiv__label">Just Opened</span><div class="sdiv__line"></div></div><a href="https://www.blogto.com/eat_drink/2026/05/toronto-canadas-best-new-restaurants/" class="feat" target="_blank">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&w=1200')"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat">New</span><h2 class="feat__h">N.L Ginzburg and Sammarco Just Made Canada's Best New Restaurants List</h2><p class="feat__p">Two Toronto spots cracked the 2026 Canada's 100 Best list. Ginzburg from the Bernhardt's team landed 6th. Sammarco, Rob Rossi's Italian steakhouse, grabbed 7th plus best design. Both are booking out weeks in advance.</p></div>
+</a><a href="https://www.verytoronto.com/new-and-hot" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2159065/pexels-photo-2159065.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">New</span><h3 class="card__h">Eggslut Finally Opened Its First Canadian Location in Toronto</h3><p class="card__p">The LA breakfast chain launched April 30 at CF Toronto Eaton Centre. Expect lineups. The Fairfax sandwich is worth it. The Instagram photos are already everywhere.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.blogto.com/eat_drink/2026/05/moms-recipes-restaurant-toronto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">New</span><h3 class="card__h">Mom's Recipes on Avenue Road Already Has a Celebrity Following</h3><p class="card__p">Ukrainian bakery tucked between Osteria Giulia and Adrak. Founded by Victoria Olshana. Flying under the radar but not for long.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.verytoronto.com/new-and-hot" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">New</span><h3 class="card__h">Kusi: From Filipino Supper Club Pop-Ups to a Permanent Home</h3><p class="card__p">Started as underground dinners. Built a loyal following. Now has a real restaurant. This is how you do it in Toronto.</p><span class="card__link">Read More</span></div>
+</a><div class="sdiv"><span class="sdiv__label">Closed Forever</span><div class="sdiv__line"></div></div><a href="eat.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">RIP</span><h3 class="card__h">Yukashi, Toronto's Only Michelin-Starred Omakase, Has Closed</h3><p class="card__p">Chef Daisuke Izutsu shuttered 643 Mt Pleasant Rd on May 2. Earned a star in 2022, lost it in 2024. Toronto doesn't care about your star.</p><span class="card__link">Read More</span></div>
+</a><a href="eat.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/3338497/pexels-photo-3338497.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">RIP</span><h3 class="card__h">Tokyo Hot Fried Chicken on College Is Done After 7 Years</h3><p class="card__p">656 College St. Lease ended. Owners cited burnout. Pop-ups coming but the brick-and-mortar era is over.</p><span class="card__link">Read More</span></div>
+</a><a href="eat.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">RIP</span><h3 class="card__h">Uncle Pete's Bread Co. Lost Its Lease on Baldwin Street</h3><p class="card__p">161 Baldwin St, gone as of April 25. Another Kensington-adjacent casualty. The landlord won again.</p><span class="card__link">Read More</span></div>
+</a><div class="sdiv"><span class="sdiv__label">Happy Hours Worth Knowing</span><div class="sdiv__line"></div></div><a href="https://foxonjohn.com" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Deals</span><h3 class="card__h">Fox on John: Buck-a-Shuck Oysters, $8 Martinis, CN Tower Views</h3><p class="card__p">619 John St. Mon-Tue oyster deal. HH 3-7 PM Fri. Half-price wine all day Sunday. The best bang-for-buck patio downtown.</p><span class="card__link">Read More</span></div>
+</a><a href="https://gusto101.com" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Deals</span><h3 class="card__h">Gusto 101: Dollar-an-Ounce House Wine, Daily 4-6 PM</h3><p class="card__p">101 Portland St. King West. Yes, dollar-an-ounce wine is real. Yes, it's actually decent. Go before everyone else figures this out.</p><span class="card__link">Read More</span></div>
+</a><a href="https://oretta.ca" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Deals</span><h3 class="card__h">Oretta Happy Hour: Snacks from $5, Cocktails from $10</h3><p class="card__p">633 King St W. 4-7 PM weekdays. Late night HH 9 PM-close at the Front St location. Italian food that doesn't destroy your wallet.</p><span class="card__link">Read More</span></div>
+</a>
 </div>
-<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+<footer class="ft"><div class="ft__inner"><span>2026 I Love Toronto</span><a href="how.html">How This Works</a></div></footer>
 </body>
 </html>

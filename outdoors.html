@@ -3,64 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Outdoors — I Love Toronto</title>
-<meta name="description" content="Patios, parks, the waterfront, and everything under the sun">
+<title>Outdoors - I Love Toronto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
-.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
 .nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
 .nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
-.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
-.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
-.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
-.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
-.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
-.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
-.cat-hero__h em{font-style:italic;color:#F7C948}
-.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
-.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
-.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-.feat:hover .feat__bg{transform:scale(1.03)}
-.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
-.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
-.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
-.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
-.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
-.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
-.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
-.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
-.card:hover .card__bg{transform:scale(1.04)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}.tb__btn:hover{color:var(--bk)}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.hero{position:relative;min-height:50vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&w=1600') center/cover;opacity:.35}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95),rgba(8,11,20,.3) 50%,transparent)}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 56px;width:100%}
+.hero__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#285E61;color:#fff;padding:5px 14px;margin-bottom:16px}
+.hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.08;max-width:700px;margin-bottom:14px}
+.hero__p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.6;max-width:500px}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}.sdiv__label{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}.sdiv__line{flex:1;height:.5px;background:var(--rl)}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0}
+.card:hover{background:rgba(0,0,0,.02);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center}
 .card__body{display:flex;flex-direction:column;justify-content:center}
-.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#285E61;margin-bottom:6px}
 .card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
 .card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
-.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
-.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
-.sdiv__r{flex:1;height:.5px;background:var(--rl)}
-.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
-.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
-.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
-@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+.card__link{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#285E61;margin-top:8px}
+.feat{position:relative;overflow:hidden;min-height:400px;display:block;color:#fff;margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center}.feat:hover .feat__bg{transform:scale(1.03);transition:transform .5s}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2) 50%,rgba(0,0,0,.05))}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:44px 40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:14px;background:#285E61;color:#fff}
+.feat__h{font-family:var(--sf);font-size:34px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:15px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:40vh}.hero__inner{padding:0 24px 36px}.hero__h{font-size:28px}.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:26px}.feat__body{padding:28px 24px}.mx{padding:0 16px}}
 @media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
-<section class="cat-hero" style="background:linear-gradient(135deg,#1C4532 0%,#68D391 100%)">
-<div class="cat-hero__grid"></div>
-<div class="cat-hero__inner">
-<div class="cat-hero__tag">🌿 Outdoors</div>
-<h1 class="cat-hero__h">Outdoors</h1>
-<p class="cat-hero__p">Patios, parks, the waterfront, and everything under the sun</p>
+<nav class="nav">
+<div class="nav__top">
+<a class="nav__logo" href="index.html">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF">AI Concierge</a>
+<a class="tb__btn" href="eat.html">Eat & Drink</a>
+<a class="tb__btn" href="hoods.html">Neighbourhoods</a>
+<a class="tb__btn" href="events.html">What's On</a>
+<a class="tb__btn" href="gems.html">Local Gems</a>
+<a class="tb__btn" style="color:#285E61;font-weight:700;border-bottom:2.5px solid #285E61" href="outdoors.html">Outdoors</a>
+<a class="tb__btn" href="nightlife.html">Nightlife</a>
+<a class="tb__btn" href="parties.html">Parties</a>
+<a class="tb__btn" href="yachts.html">Yacht Rental</a>
+<a class="tb__btn" href="gossip.html">Gossip</a>
+
+</div></div>
+</nav>
+<section class="hero">
+<div class="hero__bg"></div>
+<div class="hero__ov"></div>
+<div class="hero__inner">
+<span class="hero__cat">Outdoors</span>
+<h1 class="hero__h">Trails, Parks, Bluffs, Islands, and Spots That Don't Feel Like Toronto</h1>
+<p class="hero__p">Hiking routes, hidden nature spots, seasonal outdoor activities, and the places where the city disappears and the lake takes over.</p>
 </div>
 </section>
-
-<div class="mx" style="padding-bottom:60px">
-<a href="https://www.cp24.com/local/toronto/2026/05/15/cafeto-returns-this-weekend-kicking-off-torontos-patio-season/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1322184/pexels-photo-1322184.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Now · CaféTO</span><h3 class="card__h">1,600+ Patios Just Opened — CaféTO's Biggest Season Yet</h3><p class="card__p">The city's patio program launched Victoria Day weekend. 290+ new curb lane cafés. 604 sidewalk cafés. 752 existing patios. The entire city is eating outside.</p></div></a><a href="https://www.eventbrite.ca/e/toronto-yacht-week-by-pelagos-2026-tickets-1987876713763" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1430672/pexels-photo-1430672.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">July 22 · On The Water</span><h3 class="card__h">Pelagos Yacht Week: Summer's Best Day on the Water</h3><p class="card__p">170+ yachts in Toronto Harbour. Sundeck. DJ. Skyline views. The most photogenic outdoor event of the year.</p></div></a><a href="https://torontonicity.com/2026/05/11/events-and-things-to-do-in-toronto-in-june-2026/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">June–July · Fort York</span><h3 class="card__h">FIFA Fan Festival at Fort York — 22 Days of Outdoor Screenings</h3><p class="card__p">Open-air match screenings on a massive screen. Food vendors, music stages, cultural programming. Free tickets available online.</p></div></a><a href="https://www.overheretoronto.com/toronto-summer-festivals-2026-confirmed-dates-schedule/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">July · Beaches</span><h3 class="card__h">Beaches Boardwalk + Jazz Fest: The Best Free Outdoor Day in Toronto</h3><p class="card__p">Walk the boardwalk. Stop for jazz on Queen East. Grab ice cream. Repeat for the entire month of July.</p></div></a><a href="https://www.blogto.com/toronto/the_best_patios_in_toronto/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Patio Guide</span><h3 class="card__h">The 10 Best Patios in Toronto for Summer 2026</h3><p class="card__p">Bellwoods Brewery's courtyard. Bar Raval's back alley. That rooftop in Chinatown. Ranked, reviewed, ready for you.</p></div></a><a href="https://www.overheretoronto.com/summer-events-in-toronto/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Summer · Islands</span><h3 class="card__h">Toronto Islands in Summer: The Local's Guide (Skip Centre Island)</h3><p class="card__p">Take the ferry to Ward's or Hanlan's instead. Pack a picnic, bring a speaker, rent a kayak. The islands are the city's best-kept obvious secret.</p></div></a>
+<div class="mx" style="padding:24px 32px 80px">
+<div class="sdiv"><span class="sdiv__label">Hiking in the City</span><div class="sdiv__line"></div></div><a href="https://ontariohiking.com/toronto-hiking-trails/" class="feat" target="_blank">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&w=1200')"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat">Must Do</span><h2 class="feat__h">Scarborough Bluffs: 90-Metre Cliffs, Turquoise Water, and Nobody Believes It's Toronto</h2><p class="feat__p">14km along the eastern waterfront. White cliffs rising 300 feet. A sandy beach at the bottom. The 6km loop from Bluffer's Beach to Bluffer's Park is the best urban hike in Canada. Get there before 10 AM on weekends.</p></div>
+</a><a href="https://www.10adventures.com/hikes/toronto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1578750/pexels-photo-1578750.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">National Park</span><h3 class="card__h">Rouge National Urban Park: A Wilderness Escape Inside the City</h3><p class="card__p">Canada's first national urban park. 10km of trails with real elevation changes. Vista Trail and Mast Trail are the best. Bird watching, canoeing, 10,000 years of Indigenous history. Free parking near the Zoo. Accessible by TTC.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.toronto-travel-guide.com/best-hiking-trails-toronto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Islands</span><h3 class="card__h">Toronto Islands: 14km Hike with Skyline Views the Whole Way</h3><p class="card__p">Ward Island to Hanlan Point. Flat, easy, and the skyline views are unreal. Hanlan Beach, Gibraltar Point Lighthouse, the arched bridge. Take the ferry, walk the whole thing, take the ferry back. Perfect day.</p><span class="card__link">Read More</span></div>
+</a><a href="https://torontoblogs.ca/best-hiking-trails-toronto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Hidden</span><h3 class="card__h">Don Valley Brickworks: 40-Acre Former Quarry with Skyline Views</h3><p class="card__p">Hiking trails through a reclaimed industrial site. Toronto skyline above the trees. Saturday farmers market. One of the most photogenic spots in the city.</p><span class="card__link">Read More</span></div>
+</a><a href="https://wanderlog.com/list/geoCategory/847007/best-hiking-trails-in-toronto" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Urban</span><h3 class="card__h">High Park: 400 Acres of Forest, Zoo, Trails, and Cherry Blossoms</h3><p class="card__p">Toronto's largest public park. Multiple trail difficulties. A free zoo. The cherry blossoms in spring draw thousands. The off-leash dog area is chaos in the best way.</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.tripadvisor.ca/Attractions-g155019-Activities-c61-t87-zfn8150900-Toronto_Ontario.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Secret</span><h3 class="card__h">East Point Park: Scarborough's Hidden Monarch Butterfly Staging Area</h3><p class="card__p">Between Morningside and Port Union. 178 bird species. Monarch butterfly migration staging area. Softball pavilion, trails, lake breeze even on the hottest days. Nobody goes here. That's the point.</p><span class="card__link">Read More</span></div>
+</a><div class="sdiv"><span class="sdiv__label">Seasonal</span><div class="sdiv__line"></div></div><a href="https://www.toronto.ca/business-economy/business-operation-growth/food-businesses/cafeto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/5490798/pexels-photo-5490798.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Now Open</span><h3 class="card__h">CafeTO: 1,600+ Patios Are Open Across the City</h3><p class="card__p">290+ new restaurants added this year. Victoria Day weekend launch. Your official excuse to eat outside for the next five months.</p><span class="card__link">Read More</span></div>
+</a>
 </div>
-<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+<footer class="ft"><div class="ft__inner"><span>2026 I Love Toronto</span><a href="how.html">How This Works</a></div></footer>
 </body>
 </html>

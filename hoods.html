@@ -3,64 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Neighbourhoods — I Love Toronto</title>
-<meta name="description" content="Ossington, Kensington, the Beaches, Riverside — hood by hood, block by block">
+<title>Neighbourhoods - I Love Toronto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
-.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
 .nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
 .nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
-.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
-.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
-.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
-.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
-.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
-.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
-.cat-hero__h em{font-style:italic;color:#F7C948}
-.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
-.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
-.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-.feat:hover .feat__bg{transform:scale(1.03)}
-.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
-.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
-.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
-.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
-.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
-.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
-.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
-.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
-.card:hover .card__bg{transform:scale(1.04)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}.tb__btn:hover{color:var(--bk)}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.hero{position:relative;min-height:50vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&w=1600') center/cover;opacity:.35}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95),rgba(8,11,20,.3) 50%,transparent)}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 56px;width:100%}
+.hero__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#B7791F;color:#fff;padding:5px 14px;margin-bottom:16px}
+.hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.08;max-width:700px;margin-bottom:14px}
+.hero__p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.6;max-width:500px}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}.sdiv__label{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}.sdiv__line{flex:1;height:.5px;background:var(--rl)}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0}
+.card:hover{background:rgba(0,0,0,.02);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center}
 .card__body{display:flex;flex-direction:column;justify-content:center}
-.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B7791F;margin-bottom:6px}
 .card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
 .card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
-.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
-.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
-.sdiv__r{flex:1;height:.5px;background:var(--rl)}
-.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
-.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
-.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
-@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+.card__link{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#B7791F;margin-top:8px}
+.feat{position:relative;overflow:hidden;min-height:400px;display:block;color:#fff;margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center}.feat:hover .feat__bg{transform:scale(1.03);transition:transform .5s}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2) 50%,rgba(0,0,0,.05))}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:44px 40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:14px;background:#B7791F;color:#fff}
+.feat__h{font-family:var(--sf);font-size:34px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:15px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:40vh}.hero__inner{padding:0 24px 36px}.hero__h{font-size:28px}.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:26px}.feat__body{padding:28px 24px}.mx{padding:0 16px}}
 @media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
-<section class="cat-hero" style="background:linear-gradient(135deg,#744210 0%,#D69E2E 100%)">
-<div class="cat-hero__grid"></div>
-<div class="cat-hero__inner">
-<div class="cat-hero__tag">🏘 Neighbourhoods</div>
-<h1 class="cat-hero__h">Neighbourhoods</h1>
-<p class="cat-hero__p">Ossington, Kensington, the Beaches, Riverside — hood by hood, block by block</p>
+<nav class="nav">
+<div class="nav__top">
+<a class="nav__logo" href="index.html">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF">AI Concierge</a>
+<a class="tb__btn" href="eat.html">Eat & Drink</a>
+<a class="tb__btn" style="color:#B7791F;font-weight:700;border-bottom:2.5px solid #B7791F" href="hoods.html">Neighbourhoods</a>
+<a class="tb__btn" href="events.html">What's On</a>
+<a class="tb__btn" href="gems.html">Local Gems</a>
+<a class="tb__btn" href="outdoors.html">Outdoors</a>
+<a class="tb__btn" href="nightlife.html">Nightlife</a>
+<a class="tb__btn" href="parties.html">Parties</a>
+<a class="tb__btn" href="yachts.html">Yacht Rental</a>
+<a class="tb__btn" href="gossip.html">Gossip</a>
+
+</div></div>
+</nav>
+<section class="hero">
+<div class="hero__bg"></div>
+<div class="hero__ov"></div>
+<div class="hero__inner">
+<span class="hero__cat">Neighbourhoods</span>
+<h1 class="hero__h">What's Actually Happening in Your Neighbourhood Right Now</h1>
+<p class="hero__p">Gentrification battles, new openings, condo threats, and the block-by-block changes reshaping Toronto. The stuff your neighbourhood Facebook group is too polite to say.</p>
 </div>
 </section>
-
-<div class="mx" style="padding-bottom:60px">
-<a href="https://www.blogto.com/eat_drink/2026/05/bonitos-toronto-closed-bambu/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2291367/pexels-photo-2291367.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">Ossington</span><h3 class="card__h">Ossington Ave: Still the Best Bar Strip in the City</h3><p class="card__p">Bellwoods Brewery. Bar Bowie. The new Bambu upstairs. Civil Liberties. The Drake Commissariat. It's not even close. Start here, always.</p></div></a><a href="https://www.blogto.com/real-estate-toronto/2026/05/sneaky-dees-toronto-redevelopment/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">Bathurst & College</span><h3 class="card__h">The Corner That Defines Toronto's Condo vs. Culture War</h3><p class="card__p">Sneaky Dee's has been at Bathurst & College since 1990. A 203-unit tower wants that corner. This intersection is ground zero for the future of Toronto's identity.</p></div></a><a href="https://www.blogto.com/eat_drink/toronto-kensington-market/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">Kensington Market</span><h3 class="card__h">Kensington Keeps Losing Icons — But It's Still Magic</h3><p class="card__p">Uncle Pete's is gone. The vintage shops rotate. But Seven Lives, Moonbean, and the Sunday pedestrian market keep this neighbourhood essential.</p></div></a><a href="https://www.insauga.com/torontos-patio-culture-to-expand-this-month-with-returning-program/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1322184/pexels-photo-1322184.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">Dundas West</span><h3 class="card__h">Dundas West Patio Season Is Elite — Here's Your Guide</h3><p class="card__p">CaféTO just launched. Paradise Grapevine, Reyna on King, PrettyUgly. The strip between Ossington and Dufferin is the patio capital of Toronto.</p></div></a><a href="https://www.overheretoronto.com/summer-events-in-toronto/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">The Beaches</span><h3 class="card__h">The Beaches in July: Jazz Fest, Boardwalk, and the Best Free Festival</h3><p class="card__p">2km of Queen Street East closed for the Beaches Jazz Fest. Plus the boardwalk, ice cream, and the kind of summer energy the west end pretends it invented.</p></div></a><a href="https://torontonicity.com/2026/05/11/events-and-things-to-do-in-toronto-in-june-2026/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#D69E2E">Riverside</span><h3 class="card__h">Riverside Eats & Beats — Why the East End Keeps Getting Better</h3><p class="card__p">Queen East from DVP to De Grassi. June 6. Live music, local food, actual neighbourhood spirit. The 12th year of a festival that earned its reputation.</p></div></a>
+<div class="mx" style="padding:24px 32px 80px">
+<a href="nightlife.html" class="feat" target="_blank">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&w=1200')"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat">Changing</span><h2 class="feat__h">Ossington Strip: Bonito's Out, Bambu In, Bar Bowie Runs Everything Now</h2><p class="feat__p">Between Queen and Dundas, the churn never stops. Bellwoods Brewery holds court. Everything else is replaceable. Here's what's actually worth going to.</p></div>
+</a><a href="gossip.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Under Threat</span><h3 class="card__h">Bathurst & College: Sneaky Dee's vs the 16-Storey Condo</h3><p class="card__p">Ironwood Bay wants 203 units where Sneaky Dee's nachos are. The developer promises a 'ground-floor music venue.' The neighbourhood is fighting back. Community consultation May 28.</p><span class="card__link">Read More</span></div>
+</a><a href="bbq-murder.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Liberty Village</span><h3 class="card__h">The Neighbourhood Where a BBQ Dispute Allegedly Ended in Murder</h3><p class="card__p">Dense. Stacked. Everyone can hear everything. Liberty Village was sold as 'urban lifestyle.' The reality is a murder trial over smoke from a patio grill.</p><span class="card__link">Read More</span></div>
+</a><a href="parties.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">King West</span><h3 class="card__h">King West: Where Finance Bros Go to Spend $800 on Bottle Service</h3><p class="card__p">EFS, Lavelle, Toybox, Fiction. The strip between Bathurst and Spadina is Toronto's Vegas strip without the fun. But the happy hours are actually good if you go before 7 PM.</p><span class="card__link">Read More</span></div>
+</a><a href="eat.html" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2347011/pexels-photo-2347011.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">Kensington</span><h3 class="card__h">Kensington Market Is Losing Its Landlord Battles One Lease at a Time</h3><p class="card__p">Uncle Pete's Bread gone. Baldwin St getting quieter. The vintage shops are holding on but the rent pressure is real. How long before this becomes another Ossington?</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.cp24.com/local/toronto/2026/05/20/toronto-island-airport-expansion-will-cost-up-to-5-billion-port-authority-says/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2416653/pexels-photo-2416653.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">The Islands</span><h3 class="card__h">Doug Ford Might Be Coming for the Toronto Islands - and Not Just the Airport</h3><p class="card__p">Bill 110 lets the province seize Island land. Officially it's just for Billy Bishop expansion. But the legal language is broader than that. NDP calls it a 'callous land grab.'</p><span class="card__link">Read More</span></div>
+</a><a href="https://www.blogto.com/eat_drink/2026/05/leutys-queen-toronto/" class="card" target="_blank">
+<div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2253916/pexels-photo-2253916.jpeg?auto=compress&w=600')"></div></div>
+<div class="card__body"><span class="card__cat">The Beaches</span><h3 class="card__h">Leuty's on Queen: A New Restaurant Trying to Make the Beaches Year-Round</h3><p class="card__p">Taking over the Mira Mira Diner space. Named after the iconic lifeguard station. The team wants to be a neighbourhood institution. The Beaches needs this.</p><span class="card__link">Read More</span></div>
+</a>
 </div>
-<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+<footer class="ft"><div class="ft__inner"><span>2026 I Love Toronto</span><a href="how.html">How This Works</a></div></footer>
 </body>
 </html>
