@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parties & Going Out — I Love Toronto</title>
+<meta name="description" content="Every party, happy hour, comedy show, concert, and bar event in downtown Toronto. Updated daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}.nav.scrolled{background:rgba(250,248,245,.97);backdrop-filter:blur(14px)}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700;cursor:pointer}.nav__logo span{color:var(--rd)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}
+.tb__btn:hover{color:var(--bk)}.tb__btn.active{color:#C05621;font-weight:700;border-bottom-color:#C05621}
+.tb__ico{font-size:13px}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.hero{position:relative;min-height:50vh;overflow:hidden;background:#1A0A2E;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.35}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,46,.95) 0%,rgba(26,10,46,.3) 50%,transparent 100%)}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 56px;width:100%}
+.hero__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(192,86,33,.9);color:#fff;padding:5px 14px;margin-bottom:16px;border-radius:2px}
+.hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.08;max-width:700px;margin-bottom:14px}
+.hero__p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.6;max-width:500px}
+.day-header{display:flex;align-items:center;gap:16px;padding:32px 0 16px;border-bottom:2px solid var(--bk)}
+.day-header__day{font-family:var(--sf);font-size:28px;font-weight:700;white-space:nowrap}
+.day-header__date{font-size:13px;font-weight:500;color:var(--mg);letter-spacing:1px}
+.day-header__count{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C05621;white-space:nowrap}
+.ev{display:grid;grid-template-columns:72px 1fr auto;gap:12px 16px;align-items:start;padding:14px 0;border-bottom:.5px solid #E8E5E0}
+.ev:hover{background:rgba(0,0,0,.02);margin:0 -12px;padding:14px 12px}
+.ev__time{font-size:13px;font-weight:600;color:var(--bk);padding-top:2px;text-align:right}
+.ev__info{min-width:0}
+.ev__name{font-family:var(--sf);font-size:17px;font-weight:600;line-height:1.25;margin-bottom:3px}
+.ev__name a{border-bottom:1px solid transparent;transition:border-color .15s}.ev__name a:hover{border-color:var(--bk)}
+.ev__details{font-size:12px;font-weight:300;color:var(--mg);line-height:1.4}
+.ev__tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;white-space:nowrap;align-self:center}
+.tag-concert{background:#C4442A}.tag-comedy{background:#C05621}.tag-party{background:#D53F8C}.tag-happy{background:#B7791F}.tag-dj{background:#6B46C1}.tag-sports{background:#2C5282}.tag-bar{background:#553C9A}.tag-boat{background:#285E61}.tag-festival{background:#276749}.tag-brunch{background:#9B2C2C}.tag-theatre{background:#744210}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:40vh}.hero__inner{padding:0 24px 36px}.hero__h{font-size:28px}.ev{grid-template-columns:56px 1fr auto}.mx{padding:0 16px}}
+@media(max-width:480px){.ev{grid-template-columns:1fr;gap:4px}.ev__time{text-align:left;font-size:12px}.ev__tag{justify-self:start}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<div class="nav__top">
+<a class="nav__logo" href="index.html">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF"><span class="tb__ico">🤖</span> AI Concierge</a>
+<a class="tb__btn" href="eat.html"><span class="tb__ico">🍷</span> Eat & Drink</a>
+<a class="tb__btn" href="hoods.html"><span class="tb__ico">🏘</span> Neighbourhoods</a>
+<a class="tb__btn" href="events.html"><span class="tb__ico">📅</span> What's On</a>
+<a class="tb__btn" href="gems.html"><span class="tb__ico">💎</span> Local Gems</a>
+<a class="tb__btn" href="outdoors.html"><span class="tb__ico">🌿</span> Outdoors</a>
+<a class="tb__btn" href="nightlife.html"><span class="tb__ico">🌙</span> Nightlife</a>
+<a class="tb__btn active" href="parties.html"><span class="tb__ico">🪩</span> Parties</a>
+<a class="tb__btn" href="gossip.html"><span class="tb__ico">👀</span> Gossip</a>
+<a class="tb__btn" href="yachts.html"><span class="tb__ico">🛥</span> Yacht Rental</a>
+</div></div>
+</nav>
+<section class="hero">
+<div class="hero__bg" style="background-image:url('https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&w=1600')"></div>
+<div class="hero__ov"></div>
+<div class="hero__inner">
+<span class="hero__cat">🪩 Parties & Going Out</span>
+<h1 class="hero__h">Every Night Out in Toronto — Concerts, Comedy, Happy Hours, Parties, Boat Cruises</h1>
+<p class="hero__p">What's actually happening tonight and every night for the next two weeks. Real events, real times, real links. Downtown core only.</p>
+</div>
+</section>
+<div class="mx" style="padding:24px 32px 80px">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;padding:16px 0;border-bottom:.5px solid var(--rl)">
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#C4442A">Concert</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#C05621">Comedy</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#D53F8C">Party</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#B7791F">Happy Hour</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#6B46C1">DJ</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#2C5282">Sports</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#285E61">Boat</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#276749">Festival</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;color:#fff;background:#9B2C2C">Brunch</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Tuesday</span>
+<span class="day-header__date">May 20</span>
+<span class="day-header__count">16 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/shadow-of-intent" target="_blank" rel="noopener">Shadow of Intent — Imperium Delirium Tour</a></div><div class="ev__details">The Opera House · 735 Queen St E</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/ashnikko" target="_blank" rel="noopener">Ashnikko: Smoochies Tour</a></div><div class="ev__details">History · 1663 Queen St E</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/clara-la-san" target="_blank" rel="noopener">Clara La San — Chosen Silences Tour</a></div><div class="ev__details">REBEL · 11 Polson St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/failure" target="_blank" rel="noopener">FAILURE — Location Lost Tour</a></div><div class="ev__details">Lee's Palace · 529 Bloor St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/toronto-marlies" target="_blank" rel="noopener">Toronto Marlies vs Cleveland Monsters — AHL Playoffs</a></div><div class="ev__details">Coca-Cola Coliseum · Exhibition Place</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Amateur Night</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W · $5</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Level Up — Pro-Am Show</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W · $12</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Mainstage Revue</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.instagram.com/deathandtaxes.bar" target="_blank" rel="noopener">Death & Taxes Happy Hour — $7 wine, $12 espresso martinis</a></div><div class="ev__details">1154 Queen St W · Little Portugal</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://barvolo.com" target="_blank" rel="noopener">Bar Volo Happy Hour — $13 spritzes, $6.50 house beer (Tue)</a></div><div class="ev__details">17 St Nicholas St · Bay-Cloverhill</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour — discounted margs & bar bites</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://joeyrestaurants.com" target="_blank" rel="noopener">JOEY King St Happy Hour</a></div><div class="ev__details">1 King St W · Financial District</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comradetoronto.com" target="_blank" rel="noopener">Comrade Happy Hour — $12 cocktails, $16 prime rib burgers</a></div><div class="ev__details">758 Queen St E · Leslieville</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Tuesday Night Social — DJ sets</div><div class="ev__details">EFS · 647 King St W</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Industry Tuesdays</a></div><div class="ev__details">Lavelle · 627 King St W · Rooftop</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Buck-a-Shuck Oysters + $8 Martinis (Mon-Tue)</a></div><div class="ev__details">Fox on John · 619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Wednesday</span>
+<span class="day-header__date">May 21</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/good-kid" target="_blank" rel="noopener">Good Kid — Can We Hang Out? Tour</a></div><div class="ev__details">Danforth Music Hall · 147 Danforth Ave</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/chapterhouse" target="_blank" rel="noopener">Chapterhouse</a></div><div class="ev__details">The Concert Hall · 888 Yonge St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/brother-elsey" target="_blank" rel="noopener">Brother Elsey Live</a></div><div class="ev__details">Rivoli · 334 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca" target="_blank" rel="noopener">Jesse Solomon</a></div><div class="ev__details">The Garrison · 1197 Dundas St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Pro Show — Rising Stars</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W · $12</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Mainstage Revue</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy Bar Live — Drop-In Stand-Up</a></div><div class="ev__details">Comedy Bar · 945 Bloor St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name">Death & Taxes Happy Hour</div><div class="ev__details">1154 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://barvolo.com" target="_blank" rel="noopener">Bar Volo Wine Wednesday — $13 glasses, discounted bottles</a></div><div class="ev__details">17 St Nicholas St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce House Wine</a></div><div class="ev__details">101 Portland St · King West</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Island Oysters — $2 Rotating Oysters All Night</div><div class="ev__details">677 Bloor St W · Bloordale</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">Midweek Meltdown — DJ Night</a></div><div class="ev__details">CODA · 794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Wednesday Social</div><div class="ev__details">Apt 200 · 204 Queen St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca" target="_blank" rel="noopener">Emo Night Toronto at Sneaky Dee's</a></div><div class="ev__details">Sneaky Dee's · 431 College St</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Thursday</span>
+<span class="day-header__date">May 22</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Pittsburgh Pirates — Bautista & Encarnacion HR Bobblehead</a></div><div class="ev__details">Rogers Centre · 1 Blue Jays Way</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/chris-tucker" target="_blank" rel="noopener">Chris Tucker Live!</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">6:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca" target="_blank" rel="noopener">Close Your Eyes — 1st Tour in Canada</a></div><div class="ev__details">History · 1663 Queen St E</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Antidepressant Thursdays — hosted by Bryan O'Gorman</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Mainstage Revue</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy Bar — New Material Night</a></div><div class="ev__details">Comedy Bar · 945 Bloor St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://oretta.ca" target="_blank" rel="noopener">Oretta Happy Hour — snacks from $5, cocktails from $10</a></div><div class="ev__details">633 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce Wine</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Island Oysters — $1.50 Malpeques</div><div class="ev__details">677 Bloor St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Chubby's Jamaican Kitchen — Island Time HH ($12 cocktails)</div><div class="ev__details">104 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Somebody Anybody × DLT — R&B Night at Lavelle</a></div><div class="ev__details">Lavelle · 627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">Thursday Ritual — House & Techno</a></div><div class="ev__details">CODA · 794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Fiction Thursdays — Hip Hop & Top 40</div><div class="ev__details">Fiction · 152 Richmond St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM–Late</span>
+<div class="ev__info"><div class="ev__name">Waterworks Late Night HH — $7 rail, $12 cocktails</div><div class="ev__details">Waterworks Food Hall · King West</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Friday</span>
+<span class="day-header__date">May 23</span>
+<span class="day-header__count">16 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/bruno-mars" target="_blank" rel="noopener">Bruno Mars at Rogers Stadium</a></div><div class="ev__details">Rogers Centre · 1 Blue Jays Way</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">3 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Pirates — Cricket Day at the Park</a></div><div class="ev__details">Rogers Centre</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/toronto-tempo" target="_blank" rel="noopener">Toronto Tempo vs Portland Fire — WNBA</a></div><div class="ev__details">Coca-Cola Coliseum · Exhibition Place</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Pro Show — All-Star Friday headliner (Danish Anwar MC)</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Friday Night Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Startup Standup — Comedy About Building & Failing</a></div><div class="ev__details">Yuk Yuk's · Special Show</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Happy Hour — drinks from $5.95, CN Tower patio views</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://oretta.ca" target="_blank" rel="noopener">Oretta Happy Hour + Late Night 9 PM–Close</a></div><div class="ev__details">633 King St W + 55 Front St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name">Death & Taxes — $15 pizza & beer combo</div><div class="ev__details">1154 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://rebel.ca" target="_blank" rel="noopener">Friday Night at REBEL — Guest DJ TBA</a></div><div class="ev__details">REBEL · 11 Polson St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Toybox Friday — Dance & Electronic</div><div class="ev__details">Toybox · 473 Adelaide St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">EFS Social House — King West Friday</div><div class="ev__details">647 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Lavelle Rooftop Friday</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.toronto.ca/doorsopen" target="_blank" rel="noopener">Doors Open Toronto 2026 — free access to 100+ buildings</a></div><div class="ev__details">Citywide</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">10:30 PM</span>
+<div class="ev__info"><div class="ev__name">Late Night at Drake Underground — DJs & Dancing</div><div class="ev__details">The Drake Hotel · 1150 Queen St W</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Saturday</span>
+<span class="day-header__date">May 24</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/bruno-mars" target="_blank" rel="noopener">Bruno Mars at Rogers Stadium (Night 2)</a></div><div class="ev__details">Rogers Centre</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/khalid" target="_blank" rel="noopener">Khalid — It's Always Summer Somewhere Tour</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca" target="_blank" rel="noopener">Nicole Moudaber — Techno</a></div><div class="ev__details">Danforth Music Hall · 147 Danforth Ave</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Saturday Headliner Show</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Saturday Night Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">12 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Pirates — Jr. Jays Sundays (Sun)</a></div><div class="ev__details">Rogers Centre</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">12–5 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://stacktmarket.com" target="_blank" rel="noopener">STACKT Market Weekend — food, shops, DJs</a></div><div class="ev__details">28 Bathurst St</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">2–5 PM</span>
+<div class="ev__info"><div class="ev__name">Waterworks Courtyard — Daytime Spritz Party</div><div class="ev__details">Waterworks Food Hall · King West · $10 Spritzes</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour (Sat too!)</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://rebel.ca" target="_blank" rel="noopener">Saturday Night at REBEL</a></div><div class="ev__details">REBEL · 11 Polson St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Lavelle Saturday — Bottle Service & DJs</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Fiction Saturdays — Multi-Room Party</div><div class="ev__details">Fiction · 152 Richmond St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">CODA Saturday — Techno & House All Night</a></div><div class="ev__details">CODA · 794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.toronto.ca/doorsopen" target="_blank" rel="noopener">Doors Open Toronto — Day 2</a></div><div class="ev__details">Citywide · Free</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Bottomless Brunch</a></div><div class="ev__details">619 John St · All-Inclusive</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Sunday</span>
+<span class="day-header__date">May 25</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Miami Marlins — Born Ready Vladdy Bobblehead</a></div><div class="ev__details">Rogers Centre · First 15,000 fans</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca" target="_blank" rel="noopener">Arm's Length — There's A Whole World Tour</a></div><div class="ev__details">Danforth Music Hall · 147 Danforth Ave</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">2 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://talkoftoronto.ca" target="_blank" rel="noopener">Open House — The Day Party (Where the Mixtape Lives On)</a></div><div class="ev__details">TBA · Toronto Core</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">12–5 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://stacktmarket.com" target="_blank" rel="noopener">STACKT Market Sunday — Live Music & Market</a></div><div class="ev__details">28 Bathurst St</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Bottomless Brunch</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls Sunday Brunch</a></div><div class="ev__details">150 King St W · Rooftop Patio</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Half-Price Wine All Day at Fox on John</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Chez Nous — Half-Price Bottles All Day Sunday</div><div class="ev__details">1580 Queen St E · Riverside</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Watson's — Buck-a-Shuck Oysters & Half-Price Wine</div><div class="ev__details">388 Richmond St W · Downtown</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3 PM</span>
+<div class="ev__info"><div class="ev__name">Sunday Sessions — Vinyl DJ Set at Bellwoods Brewery</div><div class="ev__details">Bellwoods · 124 Ossington Ave</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">3 PM</span>
+<div class="ev__info"><div class="ev__name">Last Sunday of Month — Daytime Dance Party at Waterworks Courtyard</div><div class="ev__details">Waterworks · King West</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Sunday Special — Nubian Show (Last Sun of Month)</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Sunday Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Sunday Social at Apt 200</div><div class="ev__details">204 Queen St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Chantecler — $2 Oysters, $10 Cocktails</div><div class="ev__details">1320 Queen St W · Bloorcourt</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Monday</span>
+<span class="day-header__date">May 26</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Miami Marlins — Loonie Dogs Night</a></div><div class="ev__details">Rogers Centre · $1 Hot Dogs</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">6:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/kid-cudi" target="_blank" rel="noopener">Kid Cudi Presents: The Rebel Ragers Tour</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/summer-walker" target="_blank" rel="noopener">Summer Walker — Still Finally Over It Tour</a></div><div class="ev__details">Scotiabank Arena</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Monday Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John — $8 Martinis & Buck-a-Shuck Oysters (Mon)</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Chantecler — Half-Price Bottles Monday</div><div class="ev__details">1320 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name">Central Bar at Waterworks — $6 beer, $10 cocktails</div><div class="ev__details">Waterworks Food Hall · King West</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Watson's — Buck-a-Shuck + Half-Price Wine Monday</div><div class="ev__details">388 Richmond St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce House Wine (Daily)</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://therex.ca" target="_blank" rel="noopener">Monday Night Jazz at The Rex</a></div><div class="ev__details">The Rex · 194 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Monday Chill — Lo-Fi & Cocktails</div><div class="ev__details">Bar Raval · 505 College St</div></div>
+<span class="ev__tag tag-bar">BAR</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy at Backroom Comedy Club</a></div><div class="ev__details">Comedy Bar Danforth · 2800 Danforth Ave</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comradetoronto.com" target="_blank" rel="noopener">Comrade Happy Hour</a></div><div class="ev__details">758 Queen St E · Leslieville</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM–Close</span>
+<div class="ev__info"><div class="ev__name"><a href="https://oretta.ca" target="_blank" rel="noopener">Oretta Late Night HH</a></div><div class="ev__details">55 Front St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Tuesday</span>
+<span class="day-header__date">May 27</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">1 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays vs Miami Marlins — Day Game</a></div><div class="ev__details">Rogers Centre</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Amateur Night</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W · $5</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Level Up</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Tuesday Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://barvolo.com" target="_blank" rel="noopener">Bar Volo Tuesday — $6.50 House Beer</a></div><div class="ev__details">17 St Nicholas St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name">Death & Taxes Happy Hour</div><div class="ev__details">1154 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce Wine</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comradetoronto.com" target="_blank" rel="noopener">Comrade Happy Hour</a></div><div class="ev__details">758 Queen St E</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John — $8 Martinis & Buck-a-Shuck</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Industry Tuesdays at Lavelle</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Tuesday Night Social — EFS</div><div class="ev__details">647 King St W</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy Bar — Open Mic Night</a></div><div class="ev__details">Comedy Bar · 945 Bloor St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://therex.ca" target="_blank" rel="noopener">Jazz at The Rex</a></div><div class="ev__details">194 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">5 PM–Close</span>
+<div class="ev__info"><div class="ev__name">Good Company — $1/oz Wine, Half-Price Oysters (Tue-Sun)</div><div class="ev__details">1makeshift Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Wednesday</span>
+<span class="day-header__date">May 28</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/cake" target="_blank" rel="noopener">CAKE at Scotiabank Arena</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Wednesday Pro Show</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W · $12</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Mainstage</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy Bar — Drop-In Stand-Up</a></div><div class="ev__details">Comedy Bar · 945 Bloor St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name">Sneaky Dee's Condo Community Consultation — City Hall</div><div class="ev__details">City Hall · 100 Queen St W · Public Meeting</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://barvolo.com" target="_blank" rel="noopener">Bar Volo Wine Wednesday — $13 glasses</a></div><div class="ev__details">17 St Nicholas St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce Wine</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Island Oysters — $2 Rotating Oysters</div><div class="ev__details">677 Bloor St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name">Death & Taxes Happy Hour</div><div class="ev__details">1154 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">CODA Wednesday — House & Techno</a></div><div class="ev__details">794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Wednesday Social at Apt 200</div><div class="ev__details">204 Queen St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name">Emo Night at Sneaky Dee's</div><div class="ev__details">431 College St</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://therex.ca" target="_blank" rel="noopener">Jazz at The Rex</a></div><div class="ev__details">194 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Hey Lucy — $6.99 Martini Wednesday</div><div class="ev__details">30 King St W · King West</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Thursday</span>
+<span class="day-header__date">May 29</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/martin-garrix" target="_blank" rel="noopener">Martin Garrix Americas Tour (Night 1 of 3)</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/romeo-santos" target="_blank" rel="noopener">Romeo Santos & Prince Royce — Mejor Trade Que Nunca Tour</a></div><div class="ev__details">Scotiabank Arena</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Antidepressant Thursdays</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Thursday Show</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://comedybar.ca" target="_blank" rel="noopener">Comedy Bar — New Material Night</a></div><div class="ev__details">Comedy Bar · 945 Bloor St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://oretta.ca" target="_blank" rel="noopener">Oretta Happy Hour</a></div><div class="ev__details">633 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Island Oysters — $1.50 Malpeques</div><div class="ev__details">677 Bloor St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Chubby's — Island Time HH</div><div class="ev__details">104 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Somebody Anybody × DLT — R&B at Lavelle</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Fiction Thursdays</div><div class="ev__details">152 Richmond St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">CODA Thursday Ritual</a></div><div class="ev__details">794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://therex.ca" target="_blank" rel="noopener">Jazz at The Rex</a></div><div class="ev__details">194 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM–Close</span>
+<div class="ev__info"><div class="ev__name">Waterworks Late Night HH</div><div class="ev__details">Waterworks Food Hall · King West</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 — Dollar-an-Ounce Wine</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Friday</span>
+<span class="day-header__date">May 30</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/martin-garrix" target="_blank" rel="noopener">Martin Garrix Americas Tour (Night 2)</a></div><div class="ev__details">Scotiabank Arena</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/the-guess-who" target="_blank" rel="noopener">The Guess Who — Takin' It Back Tour</a></div><div class="ev__details">Scotiabank Arena</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Friday All-Star Headliner</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Friday Night</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">2 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.eventbrite.ca/e/soleao-latin-boat-party" target="_blank" rel="noopener">SOLEAO Latin Boat Party — Season Opener</a></div><div class="ev__details">Toronto Harbour · Jubilee Queen Cruises</div></div>
+<span class="ev__tag tag-boat">BOAT</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Happy Hour + Patio</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls King West Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://oretta.ca" target="_blank" rel="noopener">Oretta HH + Late Night 9 PM–Close</a></div><div class="ev__details">633 King St W + 55 Front St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–7 PM</span>
+<div class="ev__info"><div class="ev__name">Death & Taxes — $15 pizza & beer</div><div class="ev__details">1154 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://rebel.ca" target="_blank" rel="noopener">Friday at REBEL — Guest DJ</a></div><div class="ev__details">REBEL · 11 Polson St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Toybox Friday Night</div><div class="ev__details">473 Adelaide St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Lavelle Rooftop Friday</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">EFS King West Friday</div><div class="ev__details">647 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10:30 PM</span>
+<div class="ev__info"><div class="ev__name">Drake Underground Friday Night DJs</div><div class="ev__details">The Drake · 1150 Queen St W</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">12–5 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://stacktmarket.com" target="_blank" rel="noopener">STACKT Market Friday</a></div><div class="ev__details">28 Bathurst St</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Saturday</span>
+<span class="day-header__date">May 31</span>
+<span class="day-header__count">16 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/martin-garrix" target="_blank" rel="noopener">Martin Garrix Americas Tour (Night 3)</a></div><div class="ev__details">Scotiabank Arena</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">7:30 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.ticketmaster.ca/asap-rocky" target="_blank" rel="noopener">A$AP Rocky — Don't Be Dumb World Tour</a></div><div class="ev__details">Scotiabank Arena · 40 Bay St</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Saturday Headliner</a></div><div class="ev__details">Yuk Yuk's · 224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">J-L Cauvin as Donald Trump — One Night Only</a></div><div class="ev__details">Yuk Yuk's · Special Show</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Saturday Night</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">2 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.eventbrite.ca/e/bolly-cruise-fest" target="_blank" rel="noopener">Bolly Cruise Fest — Bollywood Boat Party</a></div><div class="ev__details">Toronto Harbour · Jubilee Queen</div></div>
+<span class="ev__tag tag-boat">BOAT</span>
+</div>
+<div class="ev">
+<span class="ev__time">12–5 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://stacktmarket.com" target="_blank" rel="noopener">STACKT Market Weekend</a></div><div class="ev__details">28 Bathurst St</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">2–5 PM</span>
+<div class="ev__info"><div class="ev__name">Waterworks Courtyard Spritz Party</div><div class="ev__details">Waterworks · King West</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls Saturday Happy Hour</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Bottomless Brunch</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://rebel.ca" target="_blank" rel="noopener">REBEL Saturday Night</a></div><div class="ev__details">11 Polson St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.lavelletoronto.com" target="_blank" rel="noopener">Lavelle Saturday — Rooftop Party</a></div><div class="ev__details">627 King St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Fiction Saturday Multi-Room</div><div class="ev__details">152 Richmond St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://codatoronto.com" target="_blank" rel="noopener">CODA Saturday — Techno All Night</a></div><div class="ev__details">794 Bathurst St</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Toybox Saturday</div><div class="ev__details">473 Adelaide St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">10:30 PM</span>
+<div class="ev__info"><div class="ev__name">Drake Underground Saturday DJs</div><div class="ev__details">1150 Queen St W</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+
+<div class="day-header">
+<span class="day-header__day">Sunday</span>
+<span class="day-header__date">June 1</span>
+<span class="day-header__count">15 things to do</span>
+</div>
+<div class="ev">
+<span class="ev__time">12 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.mlb.com/bluejays/tickets" target="_blank" rel="noopener">Blue Jays Home Game (check schedule)</a></div><div class="ev__details">Rogers Centre</div></div>
+<span class="ev__tag tag-sports">SPORTS</span>
+</div>
+<div class="ev">
+<span class="ev__time">8 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.secondcity.com/shows/toronto" target="_blank" rel="noopener">Second City Sunday</a></div><div class="ev__details">The Second City · 1 York St</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">12–5 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://stacktmarket.com" target="_blank" rel="noopener">STACKT Market Sunday</a></div><div class="ev__details">28 Bathurst St</div></div>
+<span class="ev__tag tag-festival">FESTIVAL</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Fox on John Bottomless Brunch</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 AM–4 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://earls.ca/locations/king-west" target="_blank" rel="noopener">Earls Sunday Brunch</a></div><div class="ev__details">150 King St W</div></div>
+<span class="ev__tag tag-brunch">BRUNCH</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name"><a href="https://foxonjohn.com" target="_blank" rel="noopener">Half-Price Wine at Fox on John</a></div><div class="ev__details">619 John St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Chez Nous — Half-Price Bottles</div><div class="ev__details">1580 Queen St E</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">All Day</span>
+<div class="ev__info"><div class="ev__name">Watson's — Buck-a-Shuck + Half-Price Wine</div><div class="ev__details">388 Richmond St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">3 PM</span>
+<div class="ev__info"><div class="ev__name">Bellwoods Brewery Sunday Session</div><div class="ev__details">124 Ossington Ave</div></div>
+<span class="ev__tag tag-dj">DJ</span>
+</div>
+<div class="ev">
+<span class="ev__time">3 PM</span>
+<div class="ev__info"><div class="ev__name">Sunday Afternoon Vinyl at Bar Raval</div><div class="ev__details">505 College St</div></div>
+<span class="ev__tag tag-bar">BAR</span>
+</div>
+<div class="ev">
+<span class="ev__time">5–7 PM</span>
+<div class="ev__info"><div class="ev__name">Chantecler — $2 Oysters, $10 Cocktails</div><div class="ev__details">1320 Queen St W</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+<div class="ev">
+<span class="ev__time">7 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://www.yukyuks.com/toronto" target="_blank" rel="noopener">Yuk Yuk's Sunday Show</a></div><div class="ev__details">224 Richmond St W</div></div>
+<span class="ev__tag tag-comedy">COMEDY</span>
+</div>
+<div class="ev">
+<span class="ev__time">9 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://therex.ca" target="_blank" rel="noopener">Jazz at The Rex</a></div><div class="ev__details">194 Queen St W</div></div>
+<span class="ev__tag tag-concert">CONCERT</span>
+</div>
+<div class="ev">
+<span class="ev__time">10 PM</span>
+<div class="ev__info"><div class="ev__name">Sunday Social at Apt 200</div><div class="ev__details">204 Queen St W</div></div>
+<span class="ev__tag tag-party">PARTY</span>
+</div>
+<div class="ev">
+<span class="ev__time">4–6 PM</span>
+<div class="ev__info"><div class="ev__name"><a href="https://gusto101.com" target="_blank" rel="noopener">Gusto 101 Dollar Wine</a></div><div class="ev__details">101 Portland St</div></div>
+<span class="ev__tag tag-happy">HAPPY</span>
+</div>
+
+</div>
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);},{passive:true});</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toronto's Cherry Blossoms Just Hit Peak Bloom — I Love Toronto</title>
+<meta name="description" content="High Park's cherry blossoms reached peak bloom and the photos are unreal. Here's what you missed (and where else to find them).">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:800px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
+.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
+
+.gallery{position:relative;background:var(--bk);overflow:hidden;touch-action:pan-y}
+.gallery__track{display:flex;transition:transform .4s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.gallery__slide{flex:0 0 100%;position:relative}
+.gallery__slide img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/10}
+.gallery__nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;border-radius:50%}
+.gallery__nav:hover{background:rgba(0,0,0,.75)}
+.gallery__nav--prev{left:16px}
+.gallery__nav--next{right:16px}
+.gallery__dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.gallery__dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .2s;border:none}
+.gallery__dot.active{background:#fff;transform:scale(1.3)}
+.gallery__counter{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;z-index:10;letter-spacing:1px}
+.gallery__caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);padding:48px 24px 44px;color:rgba(255,255,255,.6);font-size:12px;text-align:center;z-index:5;letter-spacing:1px}
+.swipe-hint{text-align:center;padding:10px;background:var(--bk);color:rgba(255,255,255,.3);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
+
+.article{max-width:720px;margin:0 auto;padding:48px 32px 80px}
+.article__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#D53F8C;margin-bottom:16px}
+.article__h{font-family:var(--sf);font-size:clamp(30px,4vw,44px);font-weight:700;line-height:1.1;margin-bottom:16px}
+.article__meta{font-size:13px;color:var(--wg);margin-bottom:36px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.article__lede{font-family:var(--sf);font-size:20px;font-weight:400;font-style:italic;line-height:1.7;color:#4A4A4A;margin-bottom:28px}
+.article__p{font-size:16px;font-weight:300;line-height:1.85;color:#4A4A4A;margin-bottom:24px}
+.article__pull{border-top:.5px solid var(--rl);border-bottom:.5px solid var(--rl);padding:28px 0;margin:36px 0;text-align:center}
+.article__pull p{font-family:var(--sf);font-size:22px;font-style:italic;color:#2D2D2D;line-height:1.4}
+.article__pull cite{display:block;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--wg);margin-top:12px;font-style:normal}
+.article__subh{font-family:var(--sf);font-size:24px;font-weight:600;margin:40px 0 16px}
+.article__list{margin:0 0 28px 0;padding:0;list-style:none}
+.article__list li{font-size:15px;font-weight:300;line-height:1.7;color:#4A4A4A;padding:8px 0;border-bottom:.5px solid #F0EDE8;display:flex;gap:10px}
+.article__list li strong{font-weight:500;color:var(--bk);min-width:160px}
+
+.scta{padding:44px 32px;background:var(--sd)}
+.scta__inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.scta__text{font-size:14px;font-weight:300;color:var(--mg);line-height:1.6;max-width:480px}
+.scta__text strong{font-weight:500;color:var(--bk)}
+.scta__link{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--bk);border-bottom:1px solid var(--bk);padding-bottom:2px;white-space:nowrap}
+.scta__link:hover{color:var(--rd);border-color:var(--rd)}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.gallery__nav{width:36px;height:36px;font-size:16px}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
+
+<!-- SWIPEABLE PHOTO GALLERY — All images from Pexels (free license) -->
+<div class="gallery" id="gallery">
+  <div class="gallery__counter"><span id="galCurrent">1</span> / <span id="galTotal">8</span></div>
+  <div class="gallery__track" id="galTrack">
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&w=1400" alt="Cherry blossom trees in full bloom">
+      <div class="gallery__caption">Cherry blossom canopy at peak bloom</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/2099737/pexels-photo-2099737.jpeg?auto=compress&w=1400" alt="Pink cherry blossoms close-up">
+      <div class="gallery__caption">Sakura petals at 90% bloom — the best viewing window</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/1785498/pexels-photo-1785498.jpeg?auto=compress&w=1400" alt="Cherry blossom path with people walking">
+      <div class="gallery__caption">The walk under the canopy that draws tens of thousands every spring</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&w=1400" alt="Cherry blossom branches against sky">
+      <div class="gallery__caption">Branches heavy with blossoms against a clear spring sky</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&w=1400" alt="Fallen cherry blossom petals">
+      <div class="gallery__caption">The petal drop — when the ground turns pink</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/2086361/pexels-photo-2086361.jpeg?auto=compress&w=1400" alt="Cherry blossom tree by water">
+      <div class="gallery__caption">Sakura by the water — Grenadier Pond in High Park has this exact view</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/1440465/pexels-photo-1440465.jpeg?auto=compress&w=1400" alt="Cherry blossom tunnel walkway">
+      <div class="gallery__caption">A tunnel of pink — the best 30-second walk in Toronto</div>
+    </div>
+    <div class="gallery__slide">
+      <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&w=1400" alt="Park path in spring bloom">
+      <div class="gallery__caption">Spring in the park — cherry blossoms mark the start of Toronto's outdoor season</div>
+    </div>
+  </div>
+  <button class="gallery__nav gallery__nav--prev" onclick="galNav(-1)">‹</button>
+  <button class="gallery__nav gallery__nav--next" onclick="galNav(1)">›</button>
+  <div class="gallery__dots" id="galDots"></div>
+</div>
+<div class="swipe-hint">← Swipe to see all photos →</div>
+
+<!-- ARTICLE -->
+<article class="article">
+  <span class="article__tag">🌸 Outdoors · Spring</span>
+  <h1 class="article__h">Toronto's Cherry Blossoms Just Hit Peak Bloom — and the Photos Are Unreal</h1>
+  <div class="article__meta">
+    <span>📍 High Park, Toronto</span>
+    <span>·</span>
+    <span>May 2026</span>
+    <span>·</span>
+    <span>5 min read</span>
+  </div>
+
+  <p class="article__lede">Every spring, tens of thousands of people flock to High Park to catch Toronto's most fleeting spectacle. This year, peak bloom arrived right on schedule — and the city showed up.</p>
+
+  <p class="article__p">High Park's Sakura cherry blossoms officially hit peak bloom on May 1st, with at least 70% of blossoms open across the hillside beside Grenadier Pond. The High Park Nature Centre confirmed the milestone in their annual Cherry Blossom Watch, and local expert Sakura Steve — who has tracked these trees for years — called the bloom conditions "about as good as it gets."</p>
+
+  <p class="article__p">Cool, calm weather extended the viewing window to nearly 10 days this year, giving Torontonians a generous stretch to make the pilgrimage. And pilgrimage is the right word — the park was closed to vehicles during peak bloom, the TTC was packed with people carrying picnic blankets, and the path along the hillside looked like a slow-moving river of humans craning their phones upward.</p>
+
+  <div class="article__pull">
+    <p>"The fluffy white petals of Sakura blossoms are slowly beginning to show, with a few beginning to open. Peak Bloom in High Park will occur Friday, May 1, 2026."</p>
+    <cite>High Park Nature Centre</cite>
+  </div>
+
+  <p class="article__p">The cherry trees in High Park were originally a gift from Japan in 1959, with additional plantings over the decades. The majority of the Sakura trees are clustered along the hillside above Grenadier Pond — a slope that, for about one week each year, transforms into one of the most photographed spots in the country. This year's bloom brought out everyone from professional photographers with tripods to families with strollers to couples who clearly planned their entire weekend around the petals.</p>
+
+  <p class="article__p">What makes the Toronto bloom special isn't just the trees themselves — it's the context. This isn't a curated garden or a ticketed event. It's a public park in the middle of a city of three million, and the fact that this many people show up for flowers says something about what Torontonians actually care about when they're not arguing about condos and traffic.</p>
+
+  <h2 class="article__subh">Where else to see cherry blossoms in Toronto</h2>
+
+  <p class="article__p">High Park gets all the attention, but it's not the only spot. If you missed peak bloom or want to avoid the crowds next year, here's where else the Sakura trees put on a show:</p>
+
+  <ul class="article__list">
+    <li><strong>Robarts Library (U of T)</strong> A row of cherry trees lines the east side of the Brutalist icon. Surreal contrast.</li>
+    <li><strong>Trinity Bellwoods Park</strong> Smaller cluster near the south entrance. Fewer crowds, still gorgeous.</li>
+    <li><strong>Centennial Park (Etobicoke)</strong> A quieter alternative with beautiful trees and much more space.</li>
+    <li><strong>Exhibition Place</strong> Cherry trees near the lake. Will be in full FIFA mode by June.</li>
+    <li><strong>Sherbourne Common</strong> Waterfront blossoms that most people walk right past.</li>
+    <li><strong>Port Lands</strong> Newer plantings that are starting to come into their own.</li>
+  </ul>
+
+  <p class="article__p">The bloom is over for 2026, but mark your calendar for late April next year. Sakura Steve's website (sakurainhighpark.com) tracks the trees from bud to petal drop, and the High Park Nature Centre runs a Cherry Blossom Hotline at 647-946-2547 when the season starts. Yes, a hotline. For flowers. That's how seriously Toronto takes this.</p>
+
+  <p class="article__p">See you under the canopy next spring. Bring a blanket, come early, and leave the car at home — the TTC from High Park Station is a five-minute walk to the best trees.</p>
+</article>
+
+<!-- SOFT CTA -->
+<section class="scta">
+  <div class="scta__inner">
+    <p class="scta__text"><strong>Love the neighbourhood?</strong> High Park, Roncesvalles, and Bloor West Village are some of the most sought-after addresses in the city. Hadden Homes can help you find the right one.</p>
+    <a href="https://haddenhomes.com" class="scta__link">Talk to Hadden Homes →</a>
+  </div>
+</section>
+
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+
+<script>
+let galIndex=0;const track=document.getElementById('galTrack'),total=track.children.length,dotsC=document.getElementById('galDots');
+for(let i=0;i<total;i++){const d=document.createElement('button');d.className='gallery__dot'+(i===0?' active':'');d.onclick=()=>galGo(i);dotsC.appendChild(d)}
+document.getElementById('galTotal').textContent=total;
+function galGo(i){galIndex=Math.max(0,Math.min(i,total-1));track.style.transform=`translateX(-${galIndex*100}%)`;document.getElementById('galCurrent').textContent=galIndex+1;dotsC.querySelectorAll('.gallery__dot').forEach((d,j)=>d.classList.toggle('active',j===galIndex))}
+function galNav(dir){galGo(galIndex+dir)}
+let tsx=0;const gal=document.getElementById('gallery');
+gal.addEventListener('touchstart',e=>{tsx=e.changedTouches[0].screenX},{passive:true});
+gal.addEventListener('touchend',e=>{const diff=tsx-e.changedTouches[0].screenX;if(Math.abs(diff)>50)galNav(diff>0?1:-1)},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')galNav(-1);if(e.key==='ArrowRight')galNav(1)});
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pelagos Yacht Week 2026 — I Love Toronto</title>
+<meta name="description" content="Toronto's biggest floating festival. July 22, 2026. 170+ yachts, 3,000 people, live DJs, harbour tie-up.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
+.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
+.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
+.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
+.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
+.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
+.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
+.cat-hero__h em{font-style:italic;color:#F7C948}
+.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
+.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+.feat:hover .feat__bg{transform:scale(1.03)}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
+.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
+.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
+.card:hover .card__bg{transform:scale(1.04)}
+.card__body{display:flex;flex-direction:column;justify-content:center}
+.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
+.card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
+.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
+.sdiv__r{flex:1;height:.5px;background:var(--rl)}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+@media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
+</style>
+<style>
+.yacht-hero{position:relative;min-height:80vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.yacht-hero__bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/3370021/pexels-photo-3370021.jpeg?auto=compress&w=1600') center/cover;opacity:.35}
+.yacht-hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95) 0%,rgba(8,11,20,.3) 40%,transparent 70%)}
+.yacht-hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 72px;width:100%}
+.yacht-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(100,180,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(100,180,255,.2);color:#64B4FF;padding:6px 16px;margin-bottom:24px;border-radius:2px}
+.yacht-hero__title{font-family:var(--sf);font-size:clamp(36px,5vw,64px);font-weight:700;color:var(--wh);line-height:1.06;max-width:700px;margin-bottom:22px}
+.yacht-hero__title em{font-style:italic;color:#64B4FF}
+.yacht-hero__desc{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin-bottom:32px}
+.yacht-hero__btn{display:inline-block;background:var(--wh);color:#080B14;padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:background .25s}.yacht-hero__btn:hover{background:#64B4FF}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:48px 0}
+.info-card{background:var(--sd);padding:32px;border-radius:4px}
+.info-card__label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--wg);margin-bottom:8px}
+.info-card__val{font-family:var(--sf);font-size:28px;font-weight:700;line-height:1.1}
+.info-card__note{font-size:13px;font-weight:300;color:var(--mg);margin-top:6px;line-height:1.4}
+.body-text{max-width:720px;margin:0 auto;padding:48px 0}
+.body-text h2{font-family:var(--sf);font-size:28px;font-weight:700;margin-bottom:16px}
+.body-text p{font-size:15px;font-weight:300;color:var(--mg);line-height:1.75;margin-bottom:20px}
+.body-text strong{font-weight:600;color:var(--bk)}
+.cta-bar{background:var(--bk);padding:48px 32px;text-align:center}
+.cta-bar__h{font-family:var(--sf);font-size:28px;font-weight:700;color:var(--wh);margin-bottom:12px}
+.cta-bar__p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:24px}
+.cta-bar__btn{display:inline-block;background:var(--wh);color:var(--bk);padding:15px 40px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:background .25s}.cta-bar__btn:hover{background:#64B4FF}
+@media(max-width:768px){.yacht-hero__inner{padding:0 24px 48px}.yacht-hero{min-height:60vh}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
+
+<section class="yacht-hero">
+<div class="yacht-hero__bg"></div>
+<div class="yacht-hero__ov"></div>
+<div class="yacht-hero__inner">
+<div class="yacht-hero__tag">July 22, 2026 · Toronto Harbour</div>
+<h1 class="yacht-hero__title">Pelagos <em>Yacht Week</em> 2026</h1>
+<p class="yacht-hero__desc">Toronto's annual floating festival. 170+ yachts tied up in the harbour. 3,000 people. Live DJs. Fully licensed. Skyline views. The party of the summer, on the water.</p>
+<a href="https://www.eventbrite.ca/e/toronto-yacht-week-by-pelagos-2026-tickets-1987876713763" target="_blank" class="yacht-hero__btn">Get Tickets on Eventbrite →</a>
+</div>
+</section>
+
+<div class="mx">
+<div class="info-grid">
+<div class="info-card">
+<div class="info-card__label">Date</div>
+<div class="info-card__val">July 22</div>
+<div class="info-card__note">Wednesday, 1:00 PM – 5:30 PM</div>
+</div>
+<div class="info-card">
+<div class="info-card__label">Location</div>
+<div class="info-card__val">Toronto Harbour</div>
+<div class="info-card__note">Official yacht tie-up zone</div>
+</div>
+<div class="info-card">
+<div class="info-card__label">Scale</div>
+<div class="info-card__val">170+ Yachts</div>
+<div class="info-card__note">3,000+ attendees expected</div>
+</div>
+<div class="info-card">
+<div class="info-card__label">Age</div>
+<div class="info-card__val">19+</div>
+<div class="info-card__note">Valid government-issued photo ID required</div>
+</div>
+</div>
+
+<div class="body-text">
+<h2>What Is Pelagos?</h2>
+<p>Pelagos (formerly Toronto Yacht Week) is an annual floating festival on Lake Ontario, against the backdrop of the Toronto skyline. It's the biggest boat party in the city — over 170 yachts tied up together, 3,000 people, live DJs, and a fully licensed onboard bar.</p>
+<p>Whether you own a boat, charter one, or grab a ticket on a Pelagos vessel, the experience is the same: <strong>sundeck, music, skyline, people, drinks, summer.</strong> It's the event that kicks off peak summer in Toronto.</p>
+
+<h2>What's Included</h2>
+<p><strong>Official yacht tie-up experience</strong> — your vessel (or your ticket) joins the main flotilla in the harbour. <strong>Live DJ all cruise long.</strong> <strong>Fully licensed onboard bar</strong> with drinks available throughout. <strong>Panoramic Toronto skyline and sunset views.</strong> Professional crew handling everything from boarding to return.</p>
+
+<h2>Who Goes</h2>
+<p>Birthdays, bachelorettes, groups of friends, couples. The crowd skews 25–40, well-dressed, high energy. If you've ever wanted to be on a yacht in Toronto without owning one, this is the entry point.</p>
+
+<h2>Good to Know</h2>
+<p><strong>All ticket sales are final and non-refundable.</strong> In case of weather, the event may be rescheduled — tickets are honoured on the new date. Access to the cove is first-come, first-served. Dress code: summer party. Think yacht, not yacht club.</p>
+<p>Follow <a href="https://www.instagram.com/pelagosyachtweek/" target="_blank" style="color:var(--rd);text-decoration:underline">@pelagosyachtweek</a> on Instagram for lineup announcements and after-party details.</p>
+</div>
+</div>
+
+<section class="cta-bar">
+<div class="cta-bar__h">Tickets Are Live</div>
+<p class="cta-bar__p">This sells out every year. Don't wait.</p>
+<a href="https://www.eventbrite.ca/e/toronto-yacht-week-by-pelagos-2026-tickets-1987876713763" target="_blank" class="cta-bar__btn">Get Tickets →</a>
+</section>
+
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+</body>
+</html>

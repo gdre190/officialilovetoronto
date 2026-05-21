@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I Love Toronto — AI-Powered City Media</title>
+<meta name="description" content="Toronto's first AI-native city magazine. The stuff BlogTO won't tell you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100;transition:background .3s,backdrop-filter .3s}.nav.scrolled{background:rgba(250,248,245,.97);backdrop-filter:blur(14px)}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700;cursor:pointer}.nav__logo span{color:var(--rd)}
+.tb{border-top:.5px solid var(--rl);overflow-x:auto;scrollbar-width:none}.tb::-webkit-scrollbar{display:none}
+.tb__inner{display:flex;justify-content:center;min-width:max-content;padding:0 12px}
+.tb__btn{display:flex;align-items:center;gap:5px;padding:11px 13px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8580;border:none;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;font-family:var(--sn);background:0 0}.tb__btn:hover{color:var(--bk)}
+.tb__ico{font-size:13px}
+.hero{position:relative;min-height:88vh;overflow:hidden;background:#080B14;display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center top;opacity:.4}
+.hero__ov1{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,30,80,.6) 0%,rgba(8,11,20,.4) 50%,rgba(100,180,255,.15) 100%)}
+.hero__ov2{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,20,.95) 0%,rgba(8,11,20,.3) 40%,transparent 70%)}
+.hero__grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(100,180,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(100,180,255,1) 1px,transparent 1px);background-size:80px 80px}
+.hero__inner{position:relative;z-index:2;max-width:1060px;margin:0 auto;padding:0 48px 72px;width:100%}
+.hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;margin-bottom:24px;border-radius:2px}
+.hero__title{font-family:var(--sf);font-size:clamp(36px,5vw,64px);font-weight:700;color:var(--wh);line-height:1.06;max-width:700px;margin-bottom:22px}
+.hero__title em{font-style:italic;color:#64B4FF}
+.hero__desc{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin-bottom:14px}
+.hero__meta{font-size:12px;font-weight:400;color:rgba(100,180,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:32px}
+.hero__btn{display:inline-block;background:var(--wh);color:#080B14;padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:background .25s}.hero__btn:hover{background:#64B4FF}
+.ticker{background:var(--bk);color:var(--wh);overflow:hidden;white-space:nowrap;padding:12px 0}
+.ticker__track{display:inline-block;animation:tickScroll 40s linear infinite}
+.ticker__item{display:inline-block;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#64B4FF;margin-right:56px}
+@keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.day{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
+.day__label{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
+.day__line{flex:1;height:.5px;background:var(--rl)}
+.day__count{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#B0AAA4;white-space:nowrap}
+.feat{position:relative;overflow:hidden;min-height:460px;display:block;color:var(--wh);margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}.feat:hover .feat__bg{transform:scale(1.03)}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:44px 40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:14px;border-radius:2px;color:var(--wh)}
+.feat__h{font-family:var(--sf);font-size:34px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:15px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.feat__time{display:block;margin-top:12px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;opacity:.4}
+.post{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;transition:background .15s}
+.post:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
+.post__img{overflow:hidden;aspect-ratio:16/10}
+.post__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}.post:hover .post__bg{transform:scale(1.04)}
+.post__body{display:flex;flex-direction:column;justify-content:center}
+.post__meta{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.post__cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.post__dot{font-size:11px;color:#B0AAA4}
+.post__time{font-size:11px;color:#B0AAA4}
+.post__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
+.post__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
+.nl{padding:80px 32px;background:var(--bk);color:var(--wh);text-align:center;position:relative;overflow:hidden}
+.nl__grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
+.nl__inner{position:relative;z-index:1}
+.nl__kk{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gd);display:block;margin-bottom:18px}
+.nl__h{font-family:var(--sf);font-size:38px;font-weight:400;max-width:480px;margin:0 auto 12px;line-height:1.15}
+.nl__h em{font-style:italic;color:var(--gd)}
+.nl__p{font-size:14px;font-weight:300;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 32px;line-height:1.6}
+.nl__form{display:flex;max-width:400px;margin:0 auto}
+.nl__input{flex:1;padding:13px 16px;font-family:var(--sn);font-size:13px;border:1px solid rgba(255,255,255,.15);background:0 0;color:var(--wh);outline:0}.nl__input::placeholder{color:rgba(255,255,255,.25)}.nl__input:focus{border-color:rgba(255,255,255,.4)}
+.nl__submit{padding:13px 24px;background:var(--wh);color:var(--bk);font-family:var(--sn);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}.nl__submit:hover{background:var(--gd)}
+.partners{padding:44px 32px;text-align:center;border-bottom:.5px solid var(--rl)}
+.partners__kk{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--wg);display:block;margin-bottom:20px}
+.partners__row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:.3}
+.partners__name{font-family:var(--sf);font-size:17px;font-weight:600}
+.scta{padding:44px 32px;background:var(--sd)}
+.scta__inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.scta__text{font-size:14px;font-weight:300;color:var(--mg);line-height:1.6;max-width:560px}.scta__text strong{font-weight:500;color:var(--bk)}
+.scta__link{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--bk);border-bottom:1px solid var(--bk);padding-bottom:2px;white-space:nowrap}.scta__link:hover{color:var(--rd);border-color:var(--rd)}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.hero{min-height:70vh}.hero__inner{padding:0 24px 48px}.hero__title{font-size:32px}.feat{min-height:340px}.feat__h{font-size:26px}.feat__body{padding:28px 24px}.post{grid-template-columns:140px 1fr;gap:16px}.post__h{font-size:17px}.nav__top{padding:12px 20px}.mx{padding:0 20px}}
+@media(max-width:480px){.post{grid-template-columns:1fr}.post__img{aspect-ratio:16/9}.partners__row{gap:24px}}
+.fifa{background:linear-gradient(135deg,#1a0a2e 0%,#2d1b69 50%,#1a0a2e 100%);color:#fff;padding:10px 32px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
+.fifa__shimmer{position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.03) 50%,transparent 100%);animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
+.fifa__flag{font-size:18px}.fifa__label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.fifa__title{font-family:var(--sf);font-size:15px;font-weight:700}.fifa__title em{color:#F7C948;font-style:normal}
+.fifa__timer{display:flex;gap:8px}.fifa__unit{text-align:center;background:rgba(255,255,255,.08);padding:6px 10px;border-radius:3px;min-width:48px}
+.fifa__num{font-family:var(--sf);font-size:20px;font-weight:700;display:block;line-height:1}
+.fifa__lbl{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:2px;display:block}
+.fifa__matches{font-size:10px;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:1px}
+@media(max-width:768px){.fifa{padding:8px 16px;gap:12px}.fifa__title{font-size:13px}.fifa__num{font-size:16px}.fifa__unit{padding:5px 7px;min-width:40px}}
+.cat-eat{color:#C4442A}.bg-eat{background:#C4442A}
+.cat-hoods{color:#B7791F}.bg-hoods{background:#B7791F}
+.cat-events{color:#D53F8C}.bg-events{background:#D53F8C}
+.cat-gems{color:#276749}.bg-gems{background:#276749}
+.cat-outdoors{color:#285E61}.bg-outdoors{background:#285E61}
+.cat-nightlife{color:#553C9A}.bg-nightlife{background:#553C9A}
+.cat-parties{color:#C05621}.bg-parties{background:#C05621}
+.cat-gossip{color:#9B2C2C}.bg-gossip{background:#9B2C2C}
+.cat-crime{color:#742A2A}.bg-crime{background:#742A2A}
+.cat-dating{color:#D53F8C}.bg-dating{background:#D53F8C}
+</style>
+</head>
+<body>
+<!-- FIFA COUNTDOWN -->
+<div class="fifa" id="fifaBanner">
+<div class="fifa__shimmer"></div>
+<span class="fifa__flag">⚽🇨🇦</span>
+<span class="fifa__label">FIFA World Cup Toronto</span>
+<span class="fifa__title"><em>6 Matches at BMO Field</em> — kicks off in</span>
+<div class="fifa__timer" id="fifaTimer">
+<div class="fifa__unit"><span class="fifa__num" id="fifaDays">--</span><span class="fifa__lbl">Days</span></div>
+<div class="fifa__unit"><span class="fifa__num" id="fifaHrs">--</span><span class="fifa__lbl">Hrs</span></div>
+<div class="fifa__unit"><span class="fifa__num" id="fifaMins">--</span><span class="fifa__lbl">Min</span></div>
+<div class="fifa__unit"><span class="fifa__num" id="fifaSecs">--</span><span class="fifa__lbl">Sec</span></div>
+</div>
+<span class="fifa__matches">June 11 – July 19 · Free Fan Fest at Fort York</span>
+</div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="nav__top">
+<a class="nav__logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a>
+<span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span>
+</div>
+<div class="tb"><div class="tb__inner">
+<a class="tb__btn" href="ask.html" style="color:#64B4FF"><span class="tb__ico">🤖</span> AI Concierge</a>
+<a class="tb__btn" href="eat.html"><span class="tb__ico">🍷</span> Eat & Drink</a>
+<a class="tb__btn" href="hoods.html"><span class="tb__ico">🏘</span> Neighbourhoods</a>
+<a class="tb__btn" href="events.html"><span class="tb__ico">📅</span> What's On</a>
+<a class="tb__btn" href="gems.html"><span class="tb__ico">💎</span> Local Gems</a>
+<a class="tb__btn" href="outdoors.html"><span class="tb__ico">🌿</span> Outdoors</a>
+<a class="tb__btn" href="nightlife.html"><span class="tb__ico">🌙</span> Nightlife</a>
+<a class="tb__btn" href="parties.html"><span class="tb__ico">🪩</span> Parties</a>
+<a class="tb__btn" href="yachts.html"><span class="tb__ico">🛥</span> Yacht Rental</a>
+<a class="tb__btn" href="gossip.html"><span class="tb__ico">👀</span> Gossip</a>
+</div></div>
+</nav>
+
+<!-- HERO: FREDDY - GOODEST BOY -->
+<section class="hero">
+<div class="hero__bg" style="background-image:url('freddy2.jpg');background-color:#0a1628;background-position:center 30%"></div>
+<div class="hero__ov1"></div>
+<div class="hero__ov2"></div>
+<div class="hero__grid"></div>
+<div class="hero__inner">
+<div class="hero__tag" style="background:rgba(196,68,42,.9);color:#fff;animation:alertPulse 2s ease-in-out infinite">🚨 BREAKING</div>
+<h1 class="hero__title">The Goodest Boy in All of North America Has Been <em>Claimed</em> — And You're Not Gonna Believe It</h1>
+<p class="hero__desc">After a continent-wide investigation spanning 23 countries and 14 independent laboratories, the results are in. His name is Freddy. He single-handedly wiped out an invasive duck species in California. He has never once played fetch. He is perfect.</p>
+<p class="hero__meta">May 19, 2026 · I Love Toronto Investigative Unit</p>
+<a href="freddy.html" class="hero__btn">Full Story</a>
+</div>
+</section>
+<style>@keyframes alertPulse{0%,100%{opacity:1}50%{opacity:.7}}</style>
+
+<!-- TICKER -->
+<div class="ticker">
+<div class="ticker__track">
+<span class="ticker__item">🐕 BREAKING: GOODEST BOY IN NORTH AMERICA OFFICIALLY CLAIMED</span>
+<span class="ticker__item">🦆 FREDDY WIPED OUT ENTIRE INVASIVE DUCK SPECIES IN 11 DAYS</span>
+<span class="ticker__item">🧊 DRAKE'S ICE SCULPTURE — BLOWTORCHES, FIRE DEPT, CHAOS</span>
+<span class="ticker__item">💔 TORONTO DATING IS OFFICIALLY BROKEN</span>
+<span class="ticker__item">🏗 SNEAKY DEE'S CONDO — 16 STOREYS, 203 UNITS</span>
+<span class="ticker__item">⚽ FIFA WORLD CUP — 23 DAYS AWAY</span>
+<span class="ticker__item">🐕 BREAKING: GOODEST BOY IN NORTH AMERICA OFFICIALLY CLAIMED</span>
+<span class="ticker__item">🦆 FREDDY WIPED OUT ENTIRE INVASIVE DUCK SPECIES IN 11 DAYS</span>
+<span class="ticker__item">🧊 DRAKE'S ICE SCULPTURE — BLOWTORCHES, FIRE DEPT, CHAOS</span>
+<span class="ticker__item">💔 TORONTO DATING IS OFFICIALLY BROKEN</span>
+<span class="ticker__item">🏗 SNEAKY DEE'S CONDO — 16 STOREYS, 203 UNITS</span>
+<span class="ticker__item">⚽ FIFA WORLD CUP — 23 DAYS AWAY</span>
+</div>
+</div>
+
+<!-- FEED -->
+<div class="mx" style="padding:48px 32px 0">
+<div class="day"><span class="day__label">Right Now</span><div class="day__line"></div><span class="day__count">The stories everyone's talking about</span></div>
+
+<!-- DRAKE ICE CHAOS -->
+<a href="gossip.html" class="feat" style="min-height:420px">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&w=1200');background-color:#1a0a2e"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat bg-gossip">Gossip</span><h2 class="feat__h">Drake Dropped 3,500 Ice Blocks in a Parking Lot — Then Toronto Lost Its Mind</h2><p class="feat__p">Fans showed up with blowtorches, sledgehammers, and pickaxes. Someone started fires on top of it. The fire department melted the whole thing. Mayor Chow: "I'm excited too." The most unhinged album rollout in Toronto history.</p><span class="feat__time">The Iceman Saga · April–May 2026</span></div>
+</a>
+
+<!-- DATING -->
+<a href="#" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-dating">Dating</span><span class="post__dot">·</span><span class="post__time">This Week</span></div><h3 class="post__h">Too Many Options, Too Few Matches: Has Toronto Made Settling Down Impossible?</h3><p class="post__p">"Swipe right means you're hitting or whatever." Toxic hookup culture, the illusion of infinite choices, and a city where everyone thinks they can do better. NOW Toronto investigated. The results are depressing.</p></div></a>
+
+<!-- SNEAKY DEE'S -->
+<a href="gossip.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-gossip">Gossip</span><span class="post__dot">·</span><span class="post__time">Today</span></div><h3 class="post__h">They Want to Tear Down Sneaky Dee's and Build a 16-Storey Condo</h3><p class="post__p">Ironwood Bay. 203 units. Bathurst & College. Sneaky Dee's says they're "not going anywhere." Community consultation May 28. We've seen this movie before — the venue always loses.</p></div></a>
+
+<!-- BAMBU -->
+<a href="nightlife.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-nightlife">Nightlife</span><span class="post__dot">·</span><span class="post__time">Just Opened</span></div><h3 class="post__h">Bambu Just Opened at 180 Ossington — the Bar Bowie Team Did It Again</h3><p class="post__p">Cocktail-forward, late-night, moody as hell. Replaced Bonito's, which lasted less than a year (liquor license drama). The Ossington takeover continues.</p></div></a>
+
+<!-- CAFETO -->
+<a href="outdoors.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/5490798/pexels-photo-5490798.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-outdoors">Outdoors</span><span class="post__dot">·</span><span class="post__time">Now Open</span></div><h3 class="post__h">1,600 Patios Are Now Open — CaféTO Is Back and Summer Officially Starts</h3><p class="post__p">290+ new restaurants this year alone. Victoria Day weekend launch. The best five months of the year just started.</p></div></a>
+
+<!-- THIS WEEK -->
+<div class="day"><span class="day__label">This Week</span><div class="day__line"></div><span class="day__count">What's popping</span></div>
+
+<!-- PELAGOS -->
+<a href="pelagos.html" class="feat" style="min-height:380px">
+<div class="feat__bg" style="background-image:url('https://images.pexels.com/photos/3370021/pexels-photo-3370021.jpeg?auto=compress&w=1200');background-color:#2C5282"></div>
+<div class="feat__ov"></div>
+<div class="feat__body"><span class="feat__cat bg-parties">Parties</span><h2 class="feat__h">Pelagos Yacht Week — 170+ Yachts, 3,000 People, and the Entire Toronto Harbour</h2><p class="feat__p">July 22. DJs on every boat. Fully licensed. Skyline views. The party of the summer isn't in a club — it's floating. Tickets selling fast.</p><span class="feat__time">July 22, 2026 · Toronto Harbour · Eventbrite</span></div>
+</a>
+
+<!-- CONCERTS -->
+<a href="parties.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-parties">Parties</span><span class="post__dot">·</span><span class="post__time">May 23</span></div><h3 class="post__h">Bruno Mars, A$AP Rocky, Martin Garrix — Toronto's Concert Calendar Is Stacked</h3><p class="post__p">Bruno May 23-24. A$AP Rocky May 31. Martin Garrix three nights May 29-31. Kid Cudi May 26. Khalid May 24. This isn't a normal month.</p></div></a>
+
+<!-- FIFA -->
+<a href="events.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-events">What's On</span><span class="post__dot">·</span><span class="post__time">June 11</span></div><h3 class="post__h">The World Cup Is Coming to Toronto in 23 Days — Are We Ready?</h3><p class="post__p">6 matches at BMO Field. Free Fan Fest at Fort York — 20,000 daily capacity. The biggest sporting event this city has ever hosted. Council is still fighting about keeping Fan Fest free.</p></div></a>
+
+<!-- PRIDE -->
+<a href="events.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-events">What's On</span><span class="post__dot">·</span><span class="post__time">June 28</span></div><h3 class="post__h">Pride 2026: "We Won't Stop" — and the City Won't Either</h3><p class="post__p">The theme is defiant. Church-Wellesley to Yonge. June 28. This is always the best weekend of the year.</p></div></a>
+
+<!-- RODIGAN -->
+<a href="parties.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-parties">Parties</span><span class="post__dot">·</span><span class="post__time">June 14</span></div><h3 class="post__h">David Rodigan & Starting From Scratch at Acqua — If You Know, You Know</h3><p class="post__p">BBC1 legend meets Toronto's own. Day party. Acqua Supper Club. This one sells out and then people stand outside pretending they don't care.</p></div></a>
+
+<!-- OSSINGTON -->
+<a href="hoods.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-hoods">Neighbourhoods</span><span class="post__dot">·</span><span class="post__time">This Week</span></div><h3 class="post__h">Ossington Never Stops Changing — Bonito's Dead, Bambu's In, Bar Bowie Runs the Strip</h3><p class="post__p">Between Queen and Dundas, the churn is relentless. Bellwoods Brewery holds court. Everything else is replaceable.</p></div></a>
+
+<!-- YUKASHI -->
+<a href="eat.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-eat">Eat & Drink</span><span class="post__dot">·</span><span class="post__time">Closed</span></div><h3 class="post__h">Yukashi Had a Michelin Star. Now It Has a "For Lease" Sign.</h3><p class="post__p">Chef Daisuke Izutsu shuttered 643 Mt Pleasant. Earned a star in 2022, lost it in 2024. His parting words: "Something new is coming." Toronto doesn't care about your star.</p></div></a>
+
+<!-- SUMMER PREVIEW -->
+<div class="day"><span class="day__label">Summer Preview</span><div class="day__line"></div><span class="day__count">What's coming for the city</span></div>
+
+<a href="events.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-events">What's On</span><span class="post__dot">·</span><span class="post__time">July</span></div><h3 class="post__h">VELD, Caribana, SOS Fest, Ne-Yo & Akon — Summer 2026 Is Going to Be Stupid</h3><p class="post__p">VELD at Downsview. Caribbean Carnival shuts down the Lakeshore. Ne-Yo & Akon at RBC Echo Beach July 31. Union Summer daily on Front St. It doesn't stop until September.</p></div></a>
+
+<a href="parties.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat cat-parties">Parties</span><span class="post__dot">·</span><span class="post__time">Every Night</span></div><h3 class="post__h">We Built a Calendar of Every Single Thing Happening in Toronto — Every Night, 2 Weeks Out</h3><p class="post__p">Happy hours, concerts, comedy, boat parties, DJ nights, sports — 15+ events per day. Real times, real links, real venues. This is the only page you need.</p></div></a>
+
+<a href="yachts.html" class="post"><div class="post__img"><div class="post__bg" style="background-image:url('https://images.pexels.com/photos/1430672/pexels-photo-1430672.jpeg?auto=compress&w=600')"></div></div><div class="post__body"><div class="post__meta"><span class="post__cat" style="color:#2C5282">Yacht Rental</span><span class="post__dot">·</span><span class="post__time">Coming Soon</span></div><h3 class="post__h">We're Building the Airbnb of Toronto's Waterfront — Yacht Rental, Coming This Summer</h3><p class="post__p">Yacht owners list their boats. You book them. Sunset cruises, private parties, proposals. Direct from owner. No middleman. Waitlist is open.</p></div></a>
+
+<!-- AUTO-FEED-START -->
+<!-- AUTO-FEED-END -->
+
+<!-- CATEGORY GRID -->
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-top:48px">
+<a href="eat.html" style="background:linear-gradient(145deg,#8B4513,#D2691E);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🍷</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Eat & Drink</span></a>
+<a href="yachts.html" style="background:linear-gradient(145deg,#0A1628,#2C5282);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🛥</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Yacht Rental</span></a>
+<a href="parties.html" style="background:linear-gradient(145deg,#1A202C,#6B46C1);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🪩</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Parties</span></a>
+<a href="nightlife.html" style="background:linear-gradient(145deg,#1A202C,#553C9A);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🌙</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Nightlife</span></a>
+<a href="gossip.html" style="background:linear-gradient(145deg,#742A2A,#E53E3E);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">👀</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Gossip</span></a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-top:3px">
+<a href="hoods.html" style="background:linear-gradient(145deg,#744210,#D69E2E);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🏘</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Neighbourhoods</span></a>
+<a href="events.html" style="background:linear-gradient(145deg,#702459,#D53F8C);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">📅</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">What's On</span></a>
+<a href="gems.html" style="background:linear-gradient(145deg,#22543D,#48BB78);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">💎</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Local Gems</span></a>
+<a href="outdoors.html" style="background:linear-gradient(145deg,#1C4532,#68D391);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🌿</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Outdoors</span></a>
+<a href="pelagos.html" style="background:linear-gradient(145deg,#1A202C,#285E61);padding:32px 20px;color:#fff;text-align:center"><span style="font-size:24px;display:block;margin-bottom:8px">🛥</span><span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Pelagos</span></a>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="nl" id="newsletter" style="margin-top:60px">
+<div class="nl__grid"></div>
+<div class="nl__inner">
+<span class="nl__kk">The Toronto Drop — Every Thursday</span>
+<h2 class="nl__h">The city, <em>unfiltered</em></h2>
+<p class="nl__p">The stories your other apps won't tell you. Free, weekly, worth screenshotting.</p>
+<div class="nl__form">
+<input type="email" class="nl__input" placeholder="Your email address">
+<button class="nl__submit">I'm in</button>
+</div>
+</div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+<span class="partners__kk">Supported by Toronto businesses we love</span>
+<div class="partners__row">
+<span class="partners__name">Café Neon</span>
+<span class="partners__name">mi.sul space</span>
+<span class="partners__name">Type Books</span>
+<span class="partners__name">Paradise Grapevine</span>
+<span class="partners__name">Bellwoods Brewery</span>
+</div>
+</section>
+
+<!-- SOFT CTA -->
+<section class="scta">
+<div class="scta__inner">
+<p class="scta__text"><strong>This site is built by one person using AI.</strong> I Love Toronto is Toronto's first AI-native city magazine — one editor, smart tools, infinite coverage. No SEO garbage. No listicle farms. Just the city, unfiltered.</p>
+<a href="how.html" class="scta__link">How This Works →</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+(function(){
+const target=new Date('2026-06-11T15:00:00-04:00').getTime();
+function update(){
+const now=Date.now(),diff=target-now;
+if(diff<=0){document.getElementById('fifaTimer').innerHTML='<span style="font-size:14px;font-weight:700;color:#F7C948">IT\'S HERE 🇨🇦⚽</span>';return;}
+const d=Math.floor(diff/(1000*60*60*24)),h=Math.floor((diff%(1000*60*60*24))/(1000*60*60)),m=Math.floor((diff%(1000*60*60))/(1000*60)),s=Math.floor((diff%(1000*60))/1000);
+document.getElementById('fifaDays').textContent=d;
+document.getElementById('fifaHrs').textContent=String(h).padStart(2,'0');
+document.getElementById('fifaMins').textContent=String(m).padStart(2,'0');
+document.getElementById('fifaSecs').textContent=String(s).padStart(2,'0');
+}
+update();setInterval(update,1000);
+})();
+</script>
+</body>
+</html>

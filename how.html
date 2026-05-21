@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How This Works — I Love Toronto</title>
+<meta name="description" content="Toronto's first AI-native city magazine. Here's exactly how we use AI to cover the city faster, deeper, and with actual opinions.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--ai:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:800px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
+.nav__ai{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super}
+.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
+
+/* HERO */
+.how-hero{background:#080B14;padding:100px 32px 80px;text-align:center;position:relative;overflow:hidden}
+.how-hero__grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(100,180,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(100,180,255,1) 1px,transparent 1px);background-size:60px 60px}
+.how-hero__inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.how-hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(100,180,255,.1);border:1px solid rgba(100,180,255,.2);padding:8px 20px;margin-bottom:28px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ai)}
+.how-hero__badge .pulse{width:8px;height:8px;background:var(--ai);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.how-hero__h{font-family:var(--sf);font-size:clamp(36px,5vw,56px);font-weight:700;color:#fff;line-height:1.06;margin-bottom:20px}
+.how-hero__h em{font-style:italic;color:var(--ai)}
+.how-hero__p{font-size:17px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.8;max-width:520px;margin:0 auto}
+
+/* CONTENT */
+.content{max-width:700px;margin:0 auto;padding:60px 32px 80px}
+.content__section{margin-bottom:56px}
+.content__kicker{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ai);margin-bottom:12px}
+.content__h{font-family:var(--sf);font-size:28px;font-weight:600;line-height:1.15;margin-bottom:16px}
+.content__p{font-size:16px;font-weight:300;line-height:1.85;color:#4A4A4A;margin-bottom:20px}
+.content__p strong{font-weight:500;color:var(--bk)}
+
+/* STACK */
+.stack{display:grid;gap:3px;margin:32px 0}
+.stack__item{background:#fff;padding:28px 24px;border:.5px solid var(--rl);display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.stack__icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(100,180,255,.1),rgba(167,139,250,.1));display:flex;align-items:center;justify-content:center;font-size:22px;border-radius:4px}
+.stack__label{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bk);margin-bottom:4px}
+.stack__desc{font-size:14px;font-weight:300;color:var(--mg);line-height:1.6}
+
+/* QUOTE */
+.manifesto{background:#080B14;color:#fff;padding:60px 32px;margin:48px -32px;text-align:center;position:relative;overflow:hidden}
+.manifesto__grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(rgba(100,180,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(100,180,255,1) 1px,transparent 1px);background-size:60px 60px}
+.manifesto__inner{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.manifesto__q{font-family:var(--sf);font-size:26px;font-style:italic;line-height:1.4;margin-bottom:20px}
+.manifesto__q em{color:var(--ai);font-style:normal}
+.manifesto__cite{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span class="nav__ai">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
+
+<section class="how-hero">
+  <div class="how-hero__grid"></div>
+  <div class="how-hero__inner">
+    <div class="how-hero__badge"><span class="pulse"></span> AI-Powered City Media</div>
+    <h1 class="how-hero__h">One person. <em>One city.</em> Infinite coverage.</h1>
+    <p class="how-hero__p">I Love Toronto is built by one editor using AI to cover more ground than a traditional newsroom ever could. Here's exactly how it works — no mystery, no hype.</p>
+  </div>
+</section>
+
+<article class="content">
+  <section class="content__section">
+    <span class="content__kicker">The Thesis</span>
+    <h2 class="content__h">City media is broken. AI can fix it.</h2>
+    <p class="content__p">Toronto's media landscape is a mess. blogTO runs SEO-farmed listicles. Toronto Life publishes once a month. The local TV stations cover crime and weather. Nobody is doing what cities actually need: a fast, opinionated, useful daily guide to what's happening, where to go, and what matters.</p>
+    <p class="content__p">The problem was always economics. A traditional media company needs writers, editors, photographers, a sales team — tens of thousands per month in overhead before a single article ships. That's why city media keeps dying.</p>
+    <p class="content__p"><strong>AI changes the math.</strong> One person with the right AI stack can research, draft, fact-check, and publish at a pace that used to require a team of ten. The editorial voice, the opinions, the "this place is mid" energy — that's human. Everything else is accelerated.</p>
+  </section>
+
+  <section class="content__section">
+    <span class="content__kicker">How We Actually Use AI</span>
+    <h2 class="content__h">What AI does here (and what it doesn't)</h2>
+    <p class="content__p">Transparency matters. Here's the split:</p>
+    
+    <div class="stack">
+      <div class="stack__item"><div class="stack__icon">🤖</div><div><div class="stack__label">AI Does</div><div class="stack__desc">Research and data gathering. Event scraping and scheduling. First-draft generation. Market data analysis. Photo sourcing. SEO optimization. Newsletter formatting. Interactive tools and recommendations.</div></div></div>
+      <div class="stack__item"><div class="stack__icon">🧠</div><div><div class="stack__label">Human Does</div><div class="stack__desc">Every editorial opinion. Neighbourhood knowledge. Restaurant recommendations (we actually go). Voice, tone, and personality. Story selection. What makes the cut and what doesn't. The "this is good" and "this is mid" calls.</div></div></div>
+      <div class="stack__item"><div class="stack__icon">⚡</div><div><div class="stack__label">Together</div><div class="stack__desc">Articles go from idea to published in hours, not days. The events page tracks 100+ listings and updates constantly. Neighbourhood guides pull from real data. The AI concierge gives personalized recommendations in real time.</div></div></div>
+    </div>
+  </section>
+
+  <div class="manifesto">
+    <div class="manifesto__grid"></div>
+    <div class="manifesto__inner">
+      <p class="manifesto__q">"The future of city media isn't bigger newsrooms. It's <em>smarter tools in the hands of people who actually know the city.</em>"</p>
+      <span class="manifesto__cite">— Greg, Founder</span>
+    </div>
+  </div>
+
+  <section class="content__section">
+    <span class="content__kicker">The Stack</span>
+    <h2 class="content__h">What we're built on</h2>
+    
+    <div class="stack">
+      <div class="stack__item"><div class="stack__icon">🧊</div><div><div class="stack__label">Claude (Anthropic)</div><div class="stack__desc">The core AI engine. Powers research, writing assistance, the interactive concierge, and content analysis. Every article is AI-assisted, human-edited.</div></div></div>
+      <div class="stack__item"><div class="stack__icon">📡</div><div><div class="stack__label">Real-Time Data</div><div class="stack__desc">Event scraping, venue monitoring, and social listening to catch what's happening before anyone else publishes it.</div></div></div>
+      <div class="stack__item"><div class="stack__icon">⚡</div><div><div class="stack__label">Static Site + Edge</div><div class="stack__desc">Deployed on Netlify. No CMS bloat, no WordPress lag. Pages load instantly. The whole site is under 50KB.</div></div></div>
+      <div class="stack__item"><div class="stack__icon">💌</div><div><div class="stack__label">Newsletter</div><div class="stack__desc">Weekly "Toronto Drop" newsletter. AI helps curate, human writes the voice. Free, useful, not annoying.</div></div></div>
+    </div>
+  </section>
+
+  <section class="content__section">
+    <span class="content__kicker">Why This Matters</span>
+    <h2 class="content__h">This is a proof of concept for every city</h2>
+    <p class="content__p">If one person can build a better city media brand than a 50-person newsroom using AI, that's not a Toronto story — it's a blueprint. Every city in the world needs this: fast, opinionated, useful local media that doesn't depend on ad-driven SEO garbage to survive.</p>
+    <p class="content__p">Toronto is first because it's home. But the model works anywhere.</p>
+    <p class="content__p"><strong>Want to talk about this?</strong> Reach out. We're open to collaborations, sponsorships, and conversations about the future of local media. This is just the beginning.</p>
+  </section>
+</article>
+
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="index.html">ilovetoronto.com</a></div></footer>
+</body>
+</html>

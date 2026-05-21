@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local Gems — I Love Toronto</title>
+<meta name="description" content="The spots only residents know — no SEO lists, no influencer tags">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0D0D0D;--wh:#FFF;--cr:#FAF8F5;--sd:#F0EDE8;--wg:#9A9590;--mg:#6B6560;--rl:#DDD8D2;--rd:#C4442A;--gd:#D4A853;--bl:#64B4FF;--sf:'Playfair Display',Georgia,serif;--sn:'DM Sans',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sn);background:var(--cr);color:var(--bk);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.mx{max-width:1060px;margin:0 auto;padding:0 32px}
+.nav{background:var(--cr);border-bottom:.5px solid var(--rl);position:sticky;top:0;z-index:100}
+.nav__top{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1060px;margin:0 auto}
+.nav__logo{font-family:var(--sf);font-size:24px;font-weight:700}.nav__logo span{color:var(--rd)}
+.nav__back{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg)}.nav__back:hover{color:var(--rd)}
+.cat-hero{padding:60px 32px 50px;position:relative;overflow:hidden}
+.cat-hero__grid{position:absolute;inset:0;opacity:.05;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px}
+.cat-hero__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1}
+.cat-hero__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:rgba(255,255,255,.7);padding:5px 14px;margin-bottom:16px;border-radius:2px}
+.cat-hero__h{font-family:var(--sf);font-size:clamp(32px,4.5vw,50px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:12px}
+.cat-hero__h em{font-style:italic;color:#F7C948}
+.cat-hero__p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;max-width:520px}
+.feat{position:relative;overflow:hidden;min-height:380px;display:block;color:var(--wh);margin-bottom:3px}
+.feat__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+.feat:hover .feat__bg{transform:scale(1.03)}
+.feat__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.05) 100%)}
+.feat__body{position:absolute;bottom:0;left:0;right:0;padding:40px;z-index:2}
+.feat__cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px;border-radius:2px;color:var(--wh)}
+.feat__h{font-family:var(--sf);font-size:30px;font-weight:700;line-height:1.1;margin-bottom:10px;max-width:640px}
+.feat__p{font-size:14px;font-weight:300;opacity:.75;line-height:1.55;max-width:500px}
+.card{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:.5px solid #E8E5E0;cursor:pointer;transition:background .15s}
+.card:hover{background:var(--cr);margin:0 -16px;padding:22px 16px}
+.card__img{overflow:hidden;border-radius:4px;aspect-ratio:16/10}.card__bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s}
+.card:hover .card__bg{transform:scale(1.04)}
+.card__body{display:flex;flex-direction:column;justify-content:center}
+.card__tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.card__h{font-family:var(--sf);font-size:21px;font-weight:600;line-height:1.2;margin-bottom:5px}
+.card__p{font-size:13px;font-weight:300;color:var(--mg);line-height:1.5}
+.sdiv{display:flex;align-items:center;gap:16px;padding:36px 0 20px}
+.sdiv__l{font-family:var(--sf);font-size:18px;font-weight:600;white-space:nowrap}
+.sdiv__r{flex:1;height:.5px;background:var(--rl)}
+.ft{background:var(--bk);color:var(--wh);padding:40px 32px 24px}
+.ft__inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+.ft__inner a{color:rgba(255,255,255,.2)}.ft__inner a:hover{color:var(--wh)}
+@media(max-width:768px){.card{grid-template-columns:140px 1fr;gap:16px}.card__h{font-size:17px}.feat{min-height:300px}.feat__h{font-size:24px}}
+@media(max-width:480px){.card{grid-template-columns:1fr}.card__img{aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav__top"><a href="index.html" class="nav__logo">I Love <span>Toronto</span><span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:6px;vertical-align:super">AI</span></a><span style="font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(135deg,#64B4FF,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Toronto's AI-Powered City Media</span><a href="index.html" class="nav__back">← Back to Feed</a></div></nav>
+<section class="cat-hero" style="background:linear-gradient(135deg,#22543D 0%,#48BB78 100%)">
+<div class="cat-hero__grid"></div>
+<div class="cat-hero__inner">
+<div class="cat-hero__tag">💎 Local Gems</div>
+<h1 class="cat-hero__h">Local Gems</h1>
+<p class="cat-hero__p">The spots only residents know — no SEO lists, no influencer tags</p>
+</div>
+</section>
+
+<div class="mx" style="padding-bottom:60px">
+<a href="https://www.paradisegrapevine.com/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Dundas West</span><h3 class="card__h">Paradise Grapevine — Tinned Fish + Natural Wine, No Pretension</h3><p class="card__p">$18 tins with wine pairings. No wait before 6pm. One of the best low-key summer hangs in the city. The kind of place you tell three friends about.</p></div></a><a href="https://www.blogto.com/eat_drink/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Scarborough</span><h3 class="card__h">Scarborough's Best Curry House Doesn't Have a Sign</h3><p class="card__p">A strip mall near Markham & Lawrence. Best goat roti in the GTA. Cash only. No Instagram. Your uncle probably already knows about it.</p></div></a><a href="https://www.blogto.com/eat_drink/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Kensington</span><h3 class="card__h">Moonbean Coffee: The Kensington Café That Never Changed (Thank God)</h3><p class="card__p">While everything around it gentrifies, Moonbean stays weird, warm, and perfect. The courtyard in summer is one of the best hidden spots in the city.</p></div></a><a href="https://www.blogto.com/eat_drink/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">East York</span><h3 class="card__h">The Danforth Bookshop Everyone Walks Past but Should Stop At</h3><p class="card__p">Type Books on Queen is famous. But the used bookshop on the Danforth with the cat in the window? That's where the real finds are.</p></div></a><a href="https://www.blogto.com/eat_drink/" target="_blank" class="card"><div class="card__img"><div class="card__bg" style="background-image:url('https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&w=600');background-color:#333"></div></div><div class="card__body"><span class="card__tag" style="color:#22543D">Little Italy</span><h3 class="card__h">The $4 Espresso That Tastes Better Than Your $7 Latte</h3><p class="card__p">A tiny Italian café on College between Bathurst and Ossington. No oat milk. No wifi password. Just espresso and a conversation with the owner.</p></div></a>
+</div>
+<footer class="ft"><div class="ft__inner"><span>© 2026 I Love Toronto · AI-Powered City Media</span><a href="how.html">How This Works</a></div></footer>
+</body>
+</html>
